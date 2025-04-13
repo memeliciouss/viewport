@@ -1,30 +1,26 @@
 'use client';
 
-import { useEffect } from 'react';
+import Winbox from "@/components/winbox";
 
 export default function Page() {
-  useEffect(() => {
-    // Dynamically load the JS file from public/winbox
-    const script = document.createElement('script');
-    script.src = '/winbox/winbox.min.js'; // Path to JS file in public folder
-    script.onload = () => {
-      // @ts-ignore
-      new WinBox('Non-bundled WinBox', {
-        x: 'center',
-        y: 'center',
-        width: 400,
-        height: 300,
-        html: '<h1>Loaded from public</h1>',
-      });
-    };
-    document.body.appendChild(script);
+  const notes_mount = (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-2">Notes App</h1>
+      <p className="text-sm text-gray-300">This is a simple notes window.</p>
+    </div>
+  );
 
-    // Add the CSS link
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = '/winbox/winbox.min.css'; // Path to CSS file in public folder
-    document.head.appendChild(link);
-  }, []);
+  const app_mount = (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold mb-2">My App</h1>
+      <p className="text-sm text-gray-300">Welcome to the main app window.</p>
+    </div>
+  );
 
-  return <div />;
+  return (
+    <main>
+      <Winbox title="My App" mount={app_mount} openByDefault />
+      <Winbox title="Notes" mount={notes_mount}/>
+    </main>
+  );
 }
