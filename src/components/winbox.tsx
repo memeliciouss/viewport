@@ -13,6 +13,8 @@ interface WinBoxComponentProps {
   mount: React.ReactNode;
   x?: string;
   y?: string;
+  width?: string;  // added width prop
+  height?: string; // added height prop
   openByDefault?: boolean;
 }
 
@@ -21,6 +23,8 @@ export default function WinBoxComponent({
   mount,
   x = "60%",
   y = "10%",
+  width = "400px",  // default width
+  height = "300px", // default height
   openByDefault = false,
 }: WinBoxComponentProps) {
   const winboxRef = useRef<any>(null);
@@ -50,12 +54,13 @@ export default function WinBoxComponent({
 
     loadWinBox();
 
-    // Custom styling for the window
     const customStyle = document.createElement("style");
     customStyle.innerHTML = `
       .wb-body {
         background: #494959;
+        margin: 0px;
       }
+      
     `;
     document.head.appendChild(customStyle);
   }, [openByDefault]);
@@ -72,11 +77,14 @@ export default function WinBoxComponent({
     mountContainer.className = "wb-body";
     createRoot(mountContainer).render(mount);
 
+    const headerHeight = 40;
+
     winboxRef.current = new window.WinBox(title, {
-      width: "400px",
-      height: "300px",
+      width,
+      height,
       x,
       y,
+      top: headerHeight,
       border: "3px",
       mount: mountContainer,
       onfocus: function () {
@@ -92,7 +100,7 @@ export default function WinBoxComponent({
   };
 
   return (
-    <div style={{ width: '128px', height: '128px' }}>
+    <div style={{ width: "128px", height: "128px" }}>
       <button
         onClick={openWinBox}
         style={{
@@ -103,8 +111,8 @@ export default function WinBoxComponent({
           gap: "0.25rem",
         }}
       >
-        <img src={`/icons/${title}.png`} style={{ height: '78px', width: '78px' }} />
-        <p className="whitespace-nowrap">{title}</p>
+        <img src={`/icons/${title}.ico`} style={{ height: "48px", width: "48px" }} />
+        <p className="whitespace-nowrap text-white" style={{fontFamily:"ByteBounce",fontSize:"24px"}} >{title}</p>
       </button>
     </div>
   );
