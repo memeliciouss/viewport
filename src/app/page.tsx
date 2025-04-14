@@ -43,7 +43,7 @@ export default function Page() {
   );
   const minesweeperAppMount = (
     <iframe
-      src="https://minesweeperonline.com/"
+      src="https://minesweeper.online/"
       style={{ width: "100%", height: "100%", border: "none" }}
       title="Minesweeper"
     />
