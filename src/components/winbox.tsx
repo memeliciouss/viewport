@@ -13,8 +13,8 @@ interface WinBoxComponentProps {
   mount: React.ReactNode;
   x?: string;
   y?: string;
-  width?: string;  // added width prop
-  height?: string; // added height prop
+  width?: string;
+  height?: string;
   openByDefault?: boolean;
 }
 
@@ -23,8 +23,8 @@ export default function WinBoxComponent({
   mount,
   x = "60%",
   y = "10%",
-  width = "400px",  // default width
-  height = "300px", // default height
+  width = "400px",
+  height = "300px",
   openByDefault = false,
 }: WinBoxComponentProps) {
   const winboxRef = useRef<any>(null);

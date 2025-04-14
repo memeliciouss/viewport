@@ -2,6 +2,7 @@
 
 import Winbox from "@/components/winbox";
 import { useEffect, useState } from "react";
+import Sketchbook  from "@/components/sketchbook";
 
 export default function Page() {
 
@@ -48,13 +49,22 @@ export default function Page() {
       title="Minesweeper"
     />
   );
-  
+
+  const sketchbookMount = (
+    <div>
+      <Sketchbook/>
+    </div>
+  );
+
+
   return (
     <main>
       <Winbox title="ThisPC" mount={pc_mount} />
       {html && <Winbox title="ReadMe" mount={readme_mount} x="40%" y="15%" width="820px" height="470px" openByDefault />}
       <Winbox title="jspaint.app" mount={paintAppMount} x="30%" y="20%" width="800px" height="500px" />
       <Winbox title="Minesweeper" mount={minesweeperAppMount} x="30%" y="20%" width="800px" height="500px" />
+      <Winbox title="Sketchbook" mount={sketchbookMount} x="30%" y="20%" width="800px" height="500px" />
+      
     </main>
   );
 }
