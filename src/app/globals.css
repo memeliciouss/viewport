@@ -4,6 +4,9 @@
 :root {
   --background: #088685;
   --foreground: #ededed;
+  --cursor-arrow: url('/cursors/arrow.cur'), auto;
+  --cursor-pointer: url('/cursors/pointer.cur'), auto;
+  --cursor-drag: url('/cursors/drag.cur'), auto;
 }
 
 /* Custom font */
@@ -27,6 +30,7 @@ html, body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: "windows", sans-serif; /* ✅ now matches font-face name */
+  cursor: var(--cursor-arrow);
 }
 
 /* Remove click ring */

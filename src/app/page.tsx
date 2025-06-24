@@ -41,6 +41,12 @@ export default function Home() {
           <iframe src="https://drive.google.com/file/d/1ih21kC0bTbITx_K9ZprKglOLDYixuLFN/preview" width="640" height="480" allow="autoplay"></iframe>
         }
       />
+      <WinBoxComponent
+        title="Paint.js"
+        mount={
+          <iframe src="https://jspaint.app"></iframe>
+        }
+      />
     </main>
   );
 }

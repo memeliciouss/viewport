@@ -5,8 +5,14 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
 }
+.deskIcon{
+    cursor: var(--cursor-pointer) !important;
+}
+
 .winbox.min{
-    margin-left:80px;
+    margin-left:80px; /* to provide room for start button in taskbar*/
+    margin-top:37px; /* to compensate bottom limit and make minimized window appear on taskbar */
+    /* miinimized window is 35px thick */
 }
 
 .wb-drag {

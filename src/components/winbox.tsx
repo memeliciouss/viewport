@@ -92,6 +92,9 @@ export default function WinBoxComponent({
       onclose: () => {
         winboxRef.current = null;
       },
+      top:"0",
+      bottom:"41px", // to provide room for taskbar 
+      // minimized window is 35px thick
       
     });
 
@@ -100,7 +103,7 @@ export default function WinBoxComponent({
 
 
   return (
-    <div
+    <div className="deskIcon"
       style={{
         width: "80px",
         display: "flex",
