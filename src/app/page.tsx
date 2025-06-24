@@ -27,11 +27,11 @@ export default function Home() {
       />
 
       <WinBoxComponent
-        title="Music"
+        title="ReadMe"
         mount={
           <div>
-            <h2>Music Player</h2>
-            <p>🎵 Play some music here.</p>
+            <h2>This PC</h2>
+            <p>yeah so this pc</p>
           </div>
         }
       />
