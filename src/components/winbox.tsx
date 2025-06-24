@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 declare global {
@@ -12,24 +12,26 @@ declare global {
 interface WinBoxComponentProps {
   title: string;
   mount: React.ReactNode;
+}
+
+interface AppConfig {
+  title: string;
+  icon?: string;
   x?: string;
   y?: string;
   width?: string;
   height?: string;
+  showMenuBar?: boolean;
 }
 
 export default function WinBoxComponent({
   title,
   mount,
-  x = "60%",
-  y = "10%",
-  width = "400px",
-  height = "300px",
 }: WinBoxComponentProps) {
   const winboxRef = useRef<any>(null);
+  const [config, setConfig] = useState<AppConfig | null>(null);
 
   useEffect(() => {
-    // Load WinBox JS and CSS if not already loaded
     if (!window.WinBox) {
       const script = document.createElement("script");
       script.src = "/winbox/winbox.min.js";
@@ -41,10 +43,18 @@ export default function WinBoxComponent({
       customStyle.href = "/winbox/windows-theme.css";
       document.head.appendChild(customStyle);
     }
-  }, []);
+
+    // Load JSON config for this app
+    fetch("/data/apps.json")
+      .then((res) => res.json())
+      .then((data: AppConfig[]) => {
+        const app = data.find((item) => item.title === title);
+        if (app) setConfig(app);
+      });
+  }, [title]);
 
   const openWinBox = () => {
-    if (!window.WinBox) return;
+    if (!window.WinBox || !config) return;
 
     if (winboxRef.current) {
       if (winboxRef.current.min) {
@@ -55,7 +65,6 @@ export default function WinBoxComponent({
       return;
     }
 
-    // default menubar at top of every window
     const menuBar = (
       <div className="winbox-menu-bar">
         <span><u>F</u>ile</span>
@@ -63,57 +72,56 @@ export default function WinBoxComponent({
         <span><u>V</u>iew</span>
         <span><u>H</u>elp</span>
       </div>
+    );
 
-    )
-    // Create mount container and render React content inside it
     const mountContainer = document.createElement("div");
     createRoot(mountContainer).render(
       <>
-        {menuBar}
-        <div className="winbox-body">
-          {mount}
-        </div>
+        {config.showMenuBar !== false && menuBar}
+        <div className="winbox-body">{mount}</div>
       </>
     );
 
-    // Create new WinBox window
     winboxRef.current = new window.WinBox(title, {
-      width,
-      height,
-      x,
-      y,
-      icon: `/icons/${title}.ico`,
+      width: config.width || "400px",
+      height: config.height || "300px",
+      x: config.x || "60%",
+      y: config.y || "10%",
+      icon: `/icons/${config.icon || title}.ico`,
       mount: mountContainer,
       onclose: () => {
         winboxRef.current = null;
       },
+      
     });
+
     winboxRef.current.removeControl("wb-full");
   };
+
 
   return (
     <div
       style={{
-        width: '80px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        cursor: 'pointer',
-        userSelect: 'none',
+        width: "80px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        cursor: "pointer",
+        userSelect: "none",
       }}
       onClick={openWinBox}
     >
       <img
-        src={`/icons/${title}.ico`}
-        style={{ width: '38px', height: '42px' }}
+        src={`/icons/${config?.icon || title}.ico`}
+        style={{ width: "38px", height: "42px" }}
         alt={title}
       />
       <p
         style={{
-          color: 'white',
-          textAlign: 'center',
-          fontSize: '13px',
-          marginTop: '0.25rem',
+          color: "white",
+          textAlign: "center",
+          fontSize: "13px",
+          marginTop: "0.25rem",
         }}
       >
         {title}

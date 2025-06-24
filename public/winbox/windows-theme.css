@@ -1,10 +1,12 @@
-/* --- Windows 95 Retro Theme — Final with Focus/Blur Support --- */
 
 .winbox {
     background-color: #c4c4c4;
     border: 2px solid #4a4a4a;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+}
+.winbox.min{
+    margin-left:80px;
 }
 
 .wb-drag {
@@ -28,10 +30,12 @@
     user-select: none;
 }
 
-.winbox-focus .wb-title {
-    background-color: #14055D;
-    color: white;
+.winbox:not(.focus) .wb-drag,
+.winbox:not(.focus) .wb-title,
+.winbox:not(.focus) .wb-control{
+    background-color: #747578;
 }
+
 
 .wb-control {
     background-color: #14055D;
@@ -54,12 +58,13 @@
     font-weight: bold;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     margin-left:5px;
+    margin-top:px;
+    cursor:default;
 }
 
 .wb-min {
-    background-image: url(/controls/min.png)
+    background-image: url(/controls/min.png);
 }
 
 .wb-max {
@@ -70,19 +75,9 @@
     background-image: url(/controls/close.png)
 }
 
-.wb-close:hover {
-    background-color: #e78989;
-    color: white;
-}
-
-.wb-max:hover,
-.wb-min:hover {
-    background-color: #868383;
-    color: white;
-}
-
 .wb-icon {
     height:120%;
+    margin:-1px 0px 0-3px;
 }
 
 .wb-n,.wb-w{
@@ -109,9 +104,9 @@
 
 .wb-body {
     top:34px;
-    bottom:5px;
-    right:5px;
-    left:5px;
+    bottom:6px;
+    right:6px;
+    left:6px;
     background-color: #e0e0e0;
     color: black;
     font-family: "windows", sans-serif;

@@ -21,7 +21,7 @@ export default function Home() {
         title="Minesweeper"
         mount={
           <div>
-            <iframe src='https://nickarocho.github.io/minesweeper/'/>
+            <iframe src='https://nickarocho.github.io/minesweeper/' />
           </div>
         }
       />
@@ -33,6 +33,12 @@ export default function Home() {
             <h2>This PC</h2>
             <p>yeah so this pc</p>
           </div>
+        }
+      />
+      <WinBoxComponent
+        title="Resume"
+        mount={
+          <iframe src="https://drive.google.com/file/d/1ih21kC0bTbITx_K9ZprKglOLDYixuLFN/preview" width="640" height="480" allow="autoplay"></iframe>
         }
       />
     </main>

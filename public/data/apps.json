@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Minesweeper",
+    "icon": "minesweeper",
+    "x": "40%",
+    "y": "20%",
+    "width": "480px",
+    "height": "400px",
+    "showMenuBar": true
+  },
+  {
+    "title": "ReadMe",
+    "icon": "readme",
+    "x": "20%",
+    "y": "10%",
+    "width": "360px",
+    "height": "280px",
+    "showMenuBar": true
+  },
+  {
+    "title": "Resume",
+    "icon": "resume",
+    "x": "20%",
+    "y": "10%",
+    "width": "40%",
+    "height": "80%",
+    "showMenuBar": true
+  }
+]
