@@ -7,12 +7,13 @@
     overflow: hidden;
 }
 
-.wb-drag{
-    background-color:#000080;
+.wb-drag {
+    background-color: #14055D;
 }
+
 /* Default (unfocused) titlebar */
 .wb-title {
-    background-color: #000080;
+    background-color: #14055D;
     color: #ffffff;
     font-family: "windows", sans-serif;
     font-size: 14px;
@@ -20,22 +21,24 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 30px;
+    height: 40px;
     user-select: none;
 }
 
 /* FOCUSED WINDOW OVERRIDE */
 .winbox-focus .wb-title {
-  background-color: #000080;
-  color: white;
+    background-color: #14055D;
+    color: white;
 }
 
-.wb-control * {
-    background-color:#000080;
+.wb-control {
+    background-color: #14055D;
     display: inline-block;
     height: 100%;
     max-width: 100%;
-    text-align: center
+    align-items: center;
+    display: inline-flex;
+    margin-right:6px;
 }
 
 /* BUTTONS */
@@ -45,7 +48,7 @@
     width: 25px;
     height: 25px;
     background-color: #d0d0d0;
-    border: 3px solid #4a4a4a;
+    border: 3px solid #14055D;
     color: black;
     font-size: 13px;
     font-weight: bold;
@@ -54,25 +57,27 @@
     cursor: pointer;
 }
 
-.wb-min{
-    background-image:url(/public/controls/min.png)
+.wb-min {
+    background-image: url(/controls/min.png)
 }
-.wb-max{
-    background-image:url(/public/controls/max.png)
+
+.wb-max {
+    background-image: url(/controls/max.png)
 }
-.wb-close{
-    background-image:url(/public/controls/close.png)
+
+.wb-close {
+    background-image: url(/controls/close.png)
 }
 
 /* HOVER */
 .wb-close:hover {
-    background-color: #e04040;
+    background-color: #e78989;
     color: white;
 }
 
 .wb-max:hover,
 .wb-min:hover {
-    background-color: #666;
+    background-color: #868383;
     color: white;
 }
 
@@ -89,4 +94,25 @@
 /* Optional: Grayscale icon */
 .wb-icon {
     filter: grayscale(100%);
+}
+
+.wb-n,.wb-w{
+    background-color: #FFFEFE;
+}
+.wb-n{
+    top:-8px;
+}
+.wb-w{
+    left:-8px;
+}
+
+
+.wb-e,.wb-s{
+    background-color: #989494;
+}
+.wb-e{
+    right:-8px;
+}
+.w-s{
+    bottom:-8px;
 }

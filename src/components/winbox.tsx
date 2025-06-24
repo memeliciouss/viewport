@@ -46,7 +46,6 @@ export default function WinBoxComponent({
   const openWinBox = () => {
     if (!window.WinBox) return;
 
-    // ✅ If already open
     if (winboxRef.current) {
       if (winboxRef.current.min) {
         winboxRef.current.restore();
@@ -66,6 +65,7 @@ export default function WinBoxComponent({
       height,
       x,
       y,
+      icon:`/icons/${title}.ico`,
       mount: mountContainer,
       onclose: () => {
         winboxRef.current = null;
