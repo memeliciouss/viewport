@@ -1,4 +1,5 @@
-"use client";
+'use client';
+
 import { useEffect, useRef } from "react";
 import { createRoot } from "react-dom/client";
 
@@ -15,7 +16,6 @@ interface WinBoxComponentProps {
   y?: string;
   width?: string;
   height?: string;
-  openByDefault?: boolean;
 }
 
 export default function WinBoxComponent({
@@ -25,95 +25,82 @@ export default function WinBoxComponent({
   y = "10%",
   width = "400px",
   height = "300px",
-  openByDefault = false,
 }: WinBoxComponentProps) {
   const winboxRef = useRef<any>(null);
 
   useEffect(() => {
-    const loadWinBox = () => {
-      if (!window.WinBox) {
-        const script = document.createElement("script");
-        script.src = "/winbox/winbox.min.js";
-        script.async = true;
+    // Load WinBox JS and CSS if not already loaded
+    if (!window.WinBox) {
+      const script = document.createElement("script");
+      script.src = "/winbox/winbox.min.js";
+      script.async = true;
+      document.body.appendChild(script);
 
-        const style = document.createElement("link");
-        style.rel = "stylesheet";
-        style.href = "/winbox/winbox.min.css";
-        document.head.appendChild(style);
-
-        script.onload = () => {
-          if (openByDefault) {
-            openWinBox();
-          }
-        };
-        document.body.appendChild(script);
-      } else if (openByDefault) {
-        openWinBox();
-      }
-    };
-
-    loadWinBox();
-
-    const customStyle = document.createElement("style");
-    customStyle.innerHTML = `
-      .wb-body {
-        background: #494959;
-        margin: 0px;
-      }
-      
-    `;
-    document.head.appendChild(customStyle);
-  }, [openByDefault]);
+      const customStyle = document.createElement("link");
+      customStyle.rel = "stylesheet";
+      customStyle.href = "/winbox/windows-theme.css";
+      document.head.appendChild(customStyle);
+    }
+  }, []);
 
   const openWinBox = () => {
     if (!window.WinBox) return;
 
+    // ✅ If already open
     if (winboxRef.current) {
-      winboxRef.current.focus();
+      if (winboxRef.current.min) {
+        winboxRef.current.restore();
+      } else {
+        winboxRef.current.focus();
+      }
       return;
     }
 
+    // Create mount container and render React content inside it
     const mountContainer = document.createElement("div");
-    mountContainer.className = "wb-body";
     createRoot(mountContainer).render(mount);
 
-    const headerHeight = 40;
-
+    // Create new WinBox window
     winboxRef.current = new window.WinBox(title, {
       width,
       height,
       x,
       y,
-      top: headerHeight,
-      border: "3px",
       mount: mountContainer,
-      onfocus: function () {
-        this.setBackground("#1A202C");
-      },
-      onblur: function () {
-        this.setBackground("#4B5468");
-      },
       onclose: () => {
         winboxRef.current = null;
       },
     });
+    winboxRef.current.removeControl("wb-full");
   };
 
   return (
-    <div style={{ width: "128px", height: "128px" }}>
-      <button
-        onClick={openWinBox}
+    <div
+      style={{
+        width: '80px',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        cursor: 'pointer',
+        userSelect: 'none',
+      }}
+      onClick={openWinBox}
+    >
+      <img
+        src={`/icons/${title}.ico`}
+        style={{ width: '48px', height: '48px' }}
+        alt={title}
+      />
+      <p
         style={{
-          color: "#C0C1C0",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "0.25rem",
+          color: 'white',
+          textAlign: 'center',
+          fontSize: '18px',
+          marginTop: '0.25rem',
         }}
       >
-        <img src={`/icons/${title}.ico`} style={{ height: "48px", width: "48px" }} />
-        <p className="whitespace-nowrap text-white" style={{fontFamily:"ByteBounce",fontSize:"24px"}} >{title}</p>
-      </button>
+        {title}
+      </p>
     </div>
   );
 }

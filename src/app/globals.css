@@ -1,22 +1,36 @@
 @import "tailwindcss";
 
-/* Base color scheme */
+/* Theme */
 :root {
-  --background: #2C3648;
+  --background: #088685;
   --foreground: #ededed;
 }
 
 /* Custom font */
 @font-face {
-  font-family: "ByteBounce";
-  src: url("/fonts/ByteBounce.ttf") format("truetype");
+  font-family: "windows"; /* ✅ matches the name used below */
+  src: url("/fonts/windows.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-/* Global styles */
-body {
+/* Reset + global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background-color: var(--background);
   color: var(--foreground);
-  font-family: system-ui, sans-serif;
+  font-family: "windows", sans-serif; /* ✅ now matches font-face name */
+}
+
+/* Remove click ring */
+button, div:focus {
+  outline: none;
 }
