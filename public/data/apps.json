@@ -34,5 +34,23 @@
     "width": "55%",
     "height": "80%",
     "showMenuBar":false
+  },
+  {
+    "title": "ThisPC",
+    "icon": "thispc",
+    "x": "40%",
+    "y": "10%",
+    "width": "55%",
+    "height": "80%",
+    "showMenuBar":true
+  },
+  {
+    "title": "Github",
+    "icon": "github",
+    "x": "40%",
+    "y": "10%",
+    "width": "55%",
+    "height": "80%",
+    "showMenuBar":false
   }
 ]

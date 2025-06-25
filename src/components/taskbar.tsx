@@ -1,7 +1,16 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import NextImage from 'next/image';
+import Taskapp from './taskapp';
 
+
+const startMenuApps=[{
+  title:'Github', mount:<p>Github</p>,
+},{
+  title:'Customize', mount:<p>Customize</p>
+},{
+  title:'ThisPC', mount:<p>This PC</p>
+}]
 export default function Taskbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -92,27 +101,9 @@ export default function Taskbar() {
             gap: '6px',
           }}
         >
-          {[
-            { label: 'About PC', icon: '/icons/thispc.ico' },
-            { label: 'Settings', icon: '/icons/readme.ico' },
-            { label: 'Command Prompt', icon: '/icons/resume.ico' },
-          ].map(({ label, icon }) => (
-            <button
-              key={label}
-              className="btn btn-primary d-flex align-items-center justify-content-start"
-              style={{
-                width: '100%',
-                height: '41px',
-                padding: '0 6px',
-                fontFamily: '"windows", sans-serif',
-                fontSize: '16px',
-                gap: '8px',
-              }}
-            >
-              <NextImage src={icon} alt={label} width={26} height={20} />
-              {label}
-            </button>
-          ))}
+          {startMenuApps.map(({ title, mount }) =>
+          <Taskapp title={title} mount={mount}/>
+          )}
         </div>
       )}
     </>
