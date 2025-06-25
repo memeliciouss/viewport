@@ -1,10 +1,7 @@
 'use client';
 
 import Taskbar from '@/components/taskbar';
-import dynamic from 'next/dynamic';
-
-
-const WinBoxComponent = dynamic(() => import('@/components/winbox'), { ssr: false });
+import Deskapp from '@/components/deskapp';
 
 export default function Home() {
   return (
@@ -21,7 +18,7 @@ export default function Home() {
         gap: '1rem', 
       }}
     >
-      <WinBoxComponent
+      <Deskapp
         title="Minesweeper"
         mount={
           <div>
@@ -30,7 +27,7 @@ export default function Home() {
         }
       />
 
-      <WinBoxComponent
+      <Deskapp
         title="ReadMe"
         mount={
           <div>
@@ -40,7 +37,7 @@ export default function Home() {
         }
       />
 
-      <WinBoxComponent
+      <Deskapp
         title="Resume"
         mount={
           <iframe
@@ -51,7 +48,7 @@ export default function Home() {
         }
       />
 
-      <WinBoxComponent
+      <Deskapp
         title="Paint.js"
         mount={
           <iframe src="https://jspaint.app"></iframe>

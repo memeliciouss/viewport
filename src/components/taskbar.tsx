@@ -55,11 +55,11 @@ export default function Taskbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="btn btn-primary d-flex align-items-center justify-content-center"
           style={{
-            width: '124px',
+            width: '114px', // start button space on taskbar
             height: '41px',
             padding: '0 6px',
             fontFamily: '"windows", sans-serif',
-            fontSize: '14px',
+            fontSize: '18px',
           }}
         >
           <NextImage
@@ -105,7 +105,7 @@ export default function Taskbar() {
                 height: '41px',
                 padding: '0 6px',
                 fontFamily: '"windows", sans-serif',
-                fontSize: '14px',
+                fontSize: '16px',
                 gap: '8px',
               }}
             >
