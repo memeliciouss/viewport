@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import '@react95/core/GlobalStyle';
-import '@react95/core/themes/win95.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +28,7 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="/winbox/winbox.min.css" />
         <link rel="stylesheet" href="/winbox/windows-theme.css" />
+        <link rel="stylesheet" href="/winbox/w95.css" />
         <script src="/winbox/winbox.min.js" defer></script>
       </head>
       <body

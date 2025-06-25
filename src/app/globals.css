@@ -12,7 +12,7 @@
 
 /* Custom font */
 @font-face {
-  font-family: "windows"; /* ✅ matches the name used below */
+  font-family: "windows";
   src: url("/fonts/windows.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -29,7 +29,7 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden; 
-  background-color: var(--background);
+  background-color: var(--background) !important;
   color: var(--foreground);
   font-family: "windows", sans-serif;
   cursor: var(--cursor-arrow);
