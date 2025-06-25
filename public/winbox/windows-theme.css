@@ -7,7 +7,7 @@
     cursor: var(--cursor-arrow);
 }
 .deskIcon{
-    cursor: var(--cursor-pointer) !important;
+    cursor: var(--cursor-arrow) !important;
 }
 
 .winbox.min{
@@ -28,7 +28,7 @@
     background-color: #14055D;
     color: #ffffff;
     font-family: "windows", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     padding: 4px 8px;
     display: flex;
     align-items: center;
@@ -67,7 +67,7 @@
     justify-content: center;
     margin-left:5px;
     margin-top:px;
-    cursor:default;
+    cursor:var(--cursor-arrow);
 }
 
 .wb-min {

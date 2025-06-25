@@ -89,15 +89,15 @@ export default function deskapp({
       height: config.height || "300px",
       x: config.x || "60%",
       y: config.y || "10%",
-      icon: `/icons/${config.icon || title}.ico`,
+      icon: `/icons/${config.icon}`,
       mount: mountContainer,
       onclose: () => {
         winboxRef.current = null;
       },
-      top:"0",
-      bottom:"41px", // to provide room for taskbar 
+      top: "0",
+      bottom: "41px", // to provide room for taskbar 
       // minimized window is 35px thick
-      
+
     });
 
     winboxRef.current.removeControl("wb-full");
@@ -111,16 +111,19 @@ export default function deskapp({
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        cursor: "pointer",
+        cursor: 'var(--cursor-arrow)',
         userSelect: "none",
       }}
       onClick={openWinBox}
     >
-      <img
-        src={`/icons/${config?.icon || title}.ico`}
-        style={{ width: "38px", height: "42px" }}
-        alt={title}
-      />
+      {config && (
+  <img
+    src={`/icons/${config.icon}`}
+    style={{ width: '35px', height: 'auto' }}
+    alt={config.title}
+  />
+)}
+
       <p
         style={{
           color: "white",

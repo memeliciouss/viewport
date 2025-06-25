@@ -4,12 +4,10 @@ import NextImage from 'next/image';
 import Taskapp from './taskapp';
 
 
-const startMenuApps=[{
-  title:'Github', mount:<p>Github</p>,
-},{
-  title:'Customize', mount:<p>Customize</p>
-},{
-  title:'ThisPC', mount:<p>This PC</p>
+const startMenuApps = [{
+  title: 'Github', mount: <p>Github</p>,
+}, {
+  title: 'Customize', mount: <p>Customize</p>
 }]
 export default function Taskbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,20 +67,44 @@ export default function Taskbar() {
             padding: '0 6px',
             fontFamily: '"windows", sans-serif',
             fontSize: '18px',
+            cursor: 'var(--cursor-arrow)'
           }}
         >
           <NextImage
             src="/icons/spacepc.ico"
             alt="Start"
-            width={20}
-            height={16}
-            style={{ marginRight: '6px' }}
+            width={26}
+            height={0} // set to 0
+            style={{ height: 'auto', marginRight: '6px' }}
           />
           Start
         </button>
       </div>
 
-      {menuOpen && (
+      {menuOpen && (<>
+        <div
+  style={{
+    position: 'absolute',
+    bottom: '40px', // adjust based on taskbar height
+    left: 0,
+    zIndex: 1000, // ensure it's above other items
+    backgroundColor: '#c0c0c0',
+    borderRight: '2px solid #808080',
+    writingMode: 'vertical-rl',
+    textOrientation: 'mixed',
+    color: '#000',
+    padding: '10px 6px',
+    fontSize: '14px',
+    fontFamily: '"windows", sans-serif',
+    textAlign: 'center',
+    fontWeight: 'bold',
+    letterSpacing: '1px',
+    userSelect: 'none',
+  }}
+>
+  viewport
+</div>
+
         <div
           ref={menuRef}
           style={{
@@ -102,9 +124,10 @@ export default function Taskbar() {
           }}
         >
           {startMenuApps.map(({ title, mount }) =>
-          <Taskapp title={title} mount={mount}/>
+            <Taskapp title={title} mount={mount} />
           )}
         </div>
+        </>
       )}
     </>
   );

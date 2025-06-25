@@ -1,7 +1,7 @@
 [
   {
     "title": "Minesweeper",
-    "icon": "minesweeper",
+    "icon": "minesweeper.ico",
     "x": "40%",
     "y": "20%",
     "width": "480px",
@@ -9,8 +9,17 @@
     "showMenuBar": true
   },
   {
-    "title": "ReadMe",
-    "icon": "readme",
+    "title": "Internet",
+    "icon": "world.ico",
+    "x": "40%",
+    "y": "20%",
+    "width": "480px",
+    "height": "400px",
+    "showMenuBar": true
+  },
+  {
+    "title": "AboutMe",
+    "icon": "msagent.ico",
     "x": "20%",
     "y": "10%",
     "width": "360px",
@@ -19,7 +28,7 @@
   },
   {
     "title": "Resume",
-    "icon": "resume",
+    "icon": "resume.ico",
     "x": "20%",
     "y": "10%",
     "width": "40%",
@@ -28,7 +37,7 @@
   },
   {
     "title": "Paint.js",
-    "icon": "jspaint.app",
+    "icon": "jspaint.ico",
     "x": "40%",
     "y": "10%",
     "width": "55%",
@@ -37,7 +46,7 @@
   },
   {
     "title": "ThisPC",
-    "icon": "thispc",
+    "icon": "computer.png",
     "x": "40%",
     "y": "10%",
     "width": "55%",
@@ -46,11 +55,20 @@
   },
   {
     "title": "Github",
-    "icon": "github",
+    "icon": "github.png",
     "x": "40%",
     "y": "10%",
     "width": "55%",
     "height": "80%",
     "showMenuBar":false
+  },
+  {
+    "title": "Customize",
+    "icon": "monitor.ico",
+    "x": "40%",
+    "y": "10%",
+    "width": "55%",
+    "height": "80%",
+    "showMenuBar":true
   }
 ]
