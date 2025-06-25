@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
+
 /* Theme */
 :root {
   --background: #088685;
   --foreground: #ededed;
   --cursor-arrow: url('/cursors/arrow.cur'), auto;
   --cursor-pointer: url('/cursors/pointer.cur'), auto;
-  --cursor-drag: url('/cursors/drag.cur'), auto;
+  --cursor-loading:url('/cursors/loading.cur'),auto;
 }
 
 /* Custom font */
@@ -21,19 +22,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor:inherit;
 }
 
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden; 
   background-color: var(--background);
   color: var(--foreground);
-  font-family: "windows", sans-serif; /* ✅ now matches font-face name */
+  font-family: "windows", sans-serif;
   cursor: var(--cursor-arrow);
 }
 
-/* Remove click ring */
-button, div:focus {
-  outline: none;
+
+nextjs-portal {
+  display: none;
 }

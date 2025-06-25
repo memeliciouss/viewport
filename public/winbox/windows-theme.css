@@ -4,6 +4,7 @@
     border: 2px solid #4a4a4a;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
+    cursor: var(--cursor-arrow);
 }
 .deskIcon{
     cursor: var(--cursor-pointer) !important;
@@ -11,7 +12,7 @@
 
 .winbox.min{
     margin-left:80px; /* to provide room for start button in taskbar*/
-    margin-top:37px; /* to compensate bottom limit and make minimized window appear on taskbar */
+    margin-top:38px; /* to compensate bottom limit and make minimized window appear on taskbar */
     /* miinimized window is 35px thick */
 }
 
@@ -131,7 +132,7 @@
   user-select: none;
   border-bottom: 1px solid #888;
   padding: 0px 8px;
-  cursor:default;
+  cursor:var(--cursor-arrow);
 }
 
 .winbox-body{

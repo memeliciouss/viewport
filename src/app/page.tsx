@@ -1,10 +1,14 @@
 'use client';
 
+import Taskbar from '@/components/taskbar';
 import dynamic from 'next/dynamic';
+
+
 const WinBoxComponent = dynamic(() => import('@/components/winbox'), { ssr: false });
 
 export default function Home() {
   return (
+    <>
     <main
       style={{
         width: '100vw',
@@ -13,8 +17,8 @@ export default function Home() {
         flexDirection: 'column',
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
-        padding: '1rem',
-        gap: '1.5rem',
+        padding: 0,
+        gap: '1rem', 
       }}
     >
       <WinBoxComponent
@@ -35,18 +39,26 @@ export default function Home() {
           </div>
         }
       />
+
       <WinBoxComponent
         title="Resume"
         mount={
-          <iframe src="https://drive.google.com/file/d/1ih21kC0bTbITx_K9ZprKglOLDYixuLFN/preview" width="640" height="480" allow="autoplay"></iframe>
+          <iframe
+            src="/data/RakshitRaj-resume.pdf"
+            width="100%"
+            height="600px"
+          ></iframe>
         }
       />
+
       <WinBoxComponent
         title="Paint.js"
         mount={
           <iframe src="https://jspaint.app"></iframe>
         }
       />
-    </main>
+      </main>
+      <Taskbar/>
+      </>
   );
 }
