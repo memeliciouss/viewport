@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import Deskapp from '@/components/deskapp';
 import WindowManager from '@/components/WindowManager';
+import Taskbar from '@/components/taskbar';
+import Customize from '@/components/customize';
 
 interface AppConfig {
   title: string;
@@ -41,6 +43,9 @@ export default function Home() {
         <Deskapp title="ThisPC" onOpen={handleOpen}/>
         <Deskapp title="Internet" onOpen={handleOpen}/>
         <Deskapp title="Resume" onOpen={handleOpen}/>
+        <Deskapp title="Paint" onOpen={handleOpen}/>
+        <Deskapp title="Customize" onOpen={handleOpen}/>
+        <Deskapp title="AboutMe" onOpen={handleOpen}/>
       </main>
 
       {/* ✅ Mount content only once here */}
@@ -52,9 +57,11 @@ export default function Home() {
           AboutMe: <div><h2>something about me</h2></div>,
           Resume: <iframe src="/data/RakshitRaj-resume.pdf" width="100%" height="600px" />,
           Minesweeper: <iframe src='https://nickarocho.github.io/minesweeper/' />,
-          'Paint.js': <iframe src="https://jspaint.app" />,
+          Paint: <iframe src="https://jspaint.app" />,
+          Customize:<Customize/>
         }}
       />
+      <Taskbar/>
     </>
   );
 }

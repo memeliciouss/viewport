@@ -8,6 +8,7 @@
   --cursor-arrow: url('/cursors/arrow.cur'), auto;
   --cursor-pointer: url('/cursors/pointer.cur'), auto;
   --cursor-loading:url('/cursors/loading.cur'),auto;
+  --cursor-grab:url('/cursors/grab.cur'),auto;
 }
 
 /* Custom font */
@@ -22,7 +23,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor:inherit;
 }
 
 html, body {

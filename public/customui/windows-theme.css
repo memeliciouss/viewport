@@ -144,6 +144,11 @@
   flex-direction: column;
   align-items: center;
   outline: none;
+  cursor:var(--cursor-arrow);
+  user-select: none;
+}
+.desktop-icon:active {
+  cursor:var(--cursor-grab);
   user-select: none;
 }
 .icon-label {
