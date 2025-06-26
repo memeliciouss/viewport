@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <main
         style={{
-          backgroundColor:'var(--background)',
+          backgroundColor:'transparent',
           position: 'absolute',
           width: '100vw',
           height: '100vh',

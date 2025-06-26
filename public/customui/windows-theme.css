@@ -11,7 +11,7 @@
 }
 
 .winbox.min{
-    margin-left:120px; /* to provide room for start button in taskbar*/
+    margin-left:126px; /* to provide room for start button in taskbar*/
     margin-top:38px; /* to compensate bottom limit and make minimized window appear on taskbar */
     /* miinimized window is 35px thick */
 }

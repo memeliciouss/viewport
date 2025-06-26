@@ -31,7 +31,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="/customui/w95.css" />
         <script src="/customui/winbox.min.js" defer></script>
       </head>
-      <body
+      <body 
         className={`wallpaper-default ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           {children}
