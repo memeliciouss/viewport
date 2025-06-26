@@ -1,7 +1,6 @@
 // desktop apps
-
 'use client';
-
+import Draggable from "react-draggable";
 import { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 
@@ -54,7 +53,7 @@ export default function deskapp({
         if (app) setConfig(app);
       });
   }, [title]);
-
+  const nodeRef = useRef(null);
   const openWinBox = () => {
     if (!window.WinBox || !config) return;
 
@@ -104,36 +103,43 @@ export default function deskapp({
   };
 
 
-  return (
-    <div className="deskIcon"
-      style={{
-        width: "80px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        cursor: 'var(--cursor-arrow)',
-        userSelect: "none",
-      }}
-      onClick={openWinBox}
+  return (<Draggable
+      grid={[46, 46.5]}
+      bounds="parent"
+      nodeRef={nodeRef} // ✅ avoids deprecated findDOMNode
     >
-      {config && (
-  <img
-    src={`/icons/${config.icon}`}
-    style={{ width: '35px', height: 'auto' }}
-    alt={config.title}
-  />
-)}
-
-      <p
+      <div
+        ref={nodeRef} // ✅ assign ref here
+        className="deskIcon"
         style={{
-          color: "white",
-          textAlign: "center",
-          fontSize: "13px",
-          marginTop: "0.25rem",
+          width: "80px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          cursor: 'var(--cursor-arrow)',
+          userSelect: "none",
         }}
+        onDoubleClick={openWinBox}
       >
-        {title}
-      </p>
-    </div>
+        {config && (
+          <img
+            src={`/icons/${config.icon}`}
+            style={{ width: '35px', height: 'auto' }}
+            draggable={false}
+            alt={config.title}
+          />
+        )}
+        <p
+          style={{
+            color: "white",
+            textAlign: "center",
+            fontSize: "13px",
+            marginTop: "0.25rem",
+          }}
+        >
+          {title}
+        </p>
+      </div>
+    </Draggable>
   );
 }

@@ -136,6 +136,7 @@ export default function Taskapp({
       >
         {config && (
           <img
+            draggable={false}
             src={`/icons/${config.icon}`}
             style={{ width: '34px', height: 'auto' }}
             alt={config.title}

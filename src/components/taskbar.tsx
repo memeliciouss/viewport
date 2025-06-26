@@ -71,6 +71,7 @@ export default function Taskbar() {
           }}
         >
           <NextImage
+            draggable={false}
             src="/icons/spacepc.ico"
             alt="Start"
             width={26}

@@ -9,7 +9,7 @@ export default function Home() {
       <main
         style={{
           position: 'absolute', // start from browser top-left
-          top: '14px',
+          top: '18px',
           left: 0,
           width: '100vw',
           height: '100vh',
