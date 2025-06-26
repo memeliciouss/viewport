@@ -77,7 +77,8 @@ export default function WindowManager({ mounts, apps }: Props) {
             },
             top: '0',
             bottom: '41px', // to give space for taskbar
-            // right:'230px', 
+            // right:'230px', --> this  affects every wunbox component 
+
             noResize: config.resizable === false,
         });
         win.removeControl("wb-full");
