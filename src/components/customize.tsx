@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import "./styles/wallpaper.css";
+import "@/styles/wallpaper.css";
 
 const wallpapers = [
   { name: "Default", className: "wallpaper-default" },
