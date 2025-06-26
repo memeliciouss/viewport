@@ -35,13 +35,13 @@ export default function Taskapp({
   useEffect(() => {
     if (!window.WinBox) {
       const script = document.createElement("script");
-      script.src = "/winbox/winbox.min.js";
+      script.src = "/customui/winbox.min.js";
       script.async = true;
       document.body.appendChild(script);
 
       const customStyle = document.createElement("link");
       customStyle.rel = "stylesheet";
-      customStyle.href = "/winbox/windows-theme.css";
+      customStyle.href = "/customui/windows-theme.css";
       document.head.appendChild(customStyle);
     }
 

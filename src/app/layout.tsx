@@ -26,10 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="stylesheet" href="/winbox/winbox.min.css" />
-        <link rel="stylesheet" href="/winbox/windows-theme.css" />
-        <link rel="stylesheet" href="/winbox/w95.css" />
-        <script src="/winbox/winbox.min.js" defer></script>
+        <link rel="stylesheet" href="/customui/winbox.min.css" />
+        <link rel="stylesheet" href="/customui/windows-theme.css" />
+        <link rel="stylesheet" href="/customui/w95.css" />
+        <script src="/customui/winbox.min.js" defer></script>
       </head>
       <body
         className={`wallpaper-default ${geistSans.variable} ${geistMono.variable} antialiased`}
