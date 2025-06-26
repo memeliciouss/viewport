@@ -2,12 +2,12 @@
 import { useState, useEffect, useRef } from 'react';
 import NextImage from 'next/image';
 import Taskapp from './taskapp';
-
+import Customize from './customize';
 
 const startMenuApps = [{
   title: 'Github', mount: <p>Github</p>,
 }, {
-  title: 'Customize', mount: <p>Customize</p>
+  title: 'Customize', mount: <Customize/>
 }]
 export default function Taskbar() {
   const [menuOpen, setMenuOpen] = useState(false);

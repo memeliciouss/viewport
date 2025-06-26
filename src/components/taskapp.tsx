@@ -88,7 +88,7 @@ export default function Taskapp({
       height: config.height || "300px",
       x: config.x || "60%",
       y: config.y || "10%",
-      icon: `/icons/${config.icon || title}.ico`,
+      icon: `/icons/${config.icon}`,
       mount: mountContainer,
       onclose: () => {
         winboxRef.current = null;

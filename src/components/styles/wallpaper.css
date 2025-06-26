@@ -1,0 +1,23 @@
+.wallpaper-default {
+  background-color: var(--background);
+}
+
+.wallpaper-sky {
+  background: linear-gradient(to bottom, #87ceeb, #ffffff);
+}
+
+.wallpaper-night {
+  background: radial-gradient(circle, #2c3e50, #000000);
+}
+
+.wallpaper-grid {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #ccc,
+      #ccc 1px,
+      transparent 1px,
+      transparent 20px
+    );
+  background-color: #333;
+}

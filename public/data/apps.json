@@ -58,7 +58,7 @@
     "icon": "github.png",
     "x": "40%",
     "y": "10%",
-    "width": "55%",
+    "width": "20%",
     "height": "80%",
     "showMenuBar":false
   },
@@ -67,7 +67,7 @@
     "icon": "monitor.ico",
     "x": "40%",
     "y": "10%",
-    "width": "55%",
+    "width": "25%",
     "height": "80%",
     "showMenuBar":true
   }

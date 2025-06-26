@@ -32,8 +32,7 @@ export default function RootLayout({
         <script src="/winbox/winbox.min.js" defer></script>
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ marginTop: "60px", marginLeft: "20px" }}
+        className={`wallpaper-default ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           {children}
       </body>
