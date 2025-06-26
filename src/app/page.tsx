@@ -1,75 +1,60 @@
 'use client';
-
-import Taskbar from '@/components/taskbar';
+import { useEffect, useState } from 'react';
 import Deskapp from '@/components/deskapp';
+import WindowManager from '@/components/WindowManager';
+
+interface AppConfig {
+  title: string;
+  icon?: string;
+}
 
 export default function Home() {
+  const [apps, setApps] = useState<AppConfig[]>([]);
+
+  useEffect(() => {
+    fetch('/data/apps.json')
+      .then((res) => res.json())
+      .then((data: AppConfig[]) => setApps(data));
+  }, []);
+  const handleOpen = (title: string) => {
+    if (typeof window !== 'undefined' && (window as any).__openAppWindow) {
+      (window as any).__openAppWindow(title);
+    }
+  };
   return (
     <>
       <main
         style={{
-          position: 'absolute', // start from browser top-left
-          top: '18px',
-          left: 0,
+          backgroundColor:'var(--background)',
+          position: 'absolute',
           width: '100vw',
           height: '100vh',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start', // items start from left
-          justifyContent: 'flex-start', // items start from top
-          padding: '12px', // small margin from edges like desktop
-          gap: '12px', // space between icons
+          alignItems: 'flex-start',
+          justifyContent: 'flex-start',
+          paddingTop:'18px',
+          gap: '12px',
         }}
       >
-        <Deskapp
-          title="ThisPC"
-          mount={
-            <div>
-              <h2>This PC</h2>
-              <p>yeah so this pc</p>
-            </div>
-          }
-        />
-        <Deskapp
-          title="Internet"
-          mount={
-            <iframe src="https://google.com/search?igu=1"></iframe>
-          }
-        />
-        <Deskapp
-          title="AboutMe"
-          mount={
-            <div>
-              <h2>smthng about me</h2>
-            </div>
-          }
-        />
-        <Deskapp
-          title="Resume"
-          mount={
-            <iframe
-              src="/data/RakshitRaj-resume.pdf"
-              width="100%"
-              height="600px"
-            ></iframe>
-          }
-        />
-        <Deskapp
-          title="Minesweeper"
-          mount={
-            <div>
-              <iframe src='https://nickarocho.github.io/minesweeper/' />
-            </div>
-          }
-        />
-        <Deskapp
-          title="Paint.js"
-          mount={
-            <iframe src="https://jspaint.app"></iframe>
-          }
-        />
+        {/* 🖱️ Only display selected desktop icons manually */}
+        <Deskapp title="ThisPC" onOpen={handleOpen}/>
+        <Deskapp title="Internet" onOpen={handleOpen}/>
+        <Deskapp title="Resume" onOpen={handleOpen}/>
       </main>
-      <Taskbar />
+
+      {/* ✅ Mount content only once here */}
+      <WindowManager
+      apps={apps}
+        mounts={{
+          ThisPC: <div><h2>This PC</h2><p>yeah so this pc</p></div>,
+          Internet: <iframe src="https://google.com/search?igu=1" />,
+          AboutMe: <div><h2>something about me</h2></div>,
+          Resume: <iframe src="/data/RakshitRaj-resume.pdf" width="100%" height="600px" />,
+          Minesweeper: <iframe src='https://nickarocho.github.io/minesweeper/' />,
+          'Paint.js': <iframe src="https://jspaint.app" />,
+        }}
+      />
     </>
   );
 }

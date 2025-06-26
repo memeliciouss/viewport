@@ -138,3 +138,30 @@
 .winbox-body{
     padding:8px;
 }
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+  user-select: none;
+}
+.icon-label {
+  display: inline;
+  font-size: 14px; /* Updated font size */
+  font-family: "windows", sans-serif;
+  color: white;
+  line-height: 1.2;
+  white-space: nowrap;
+
+  /* Reserve space for border and padding */
+  border: 1px dotted transparent;
+  padding: 2px 4px; /* Slightly more breathing room for larger text */
+  background: transparent;
+}
+
+.desktop-icon:focus .icon-label {
+  background-color: #000080;
+  border-color: white;
+  border-style: dotted;
+}

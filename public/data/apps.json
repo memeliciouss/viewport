@@ -6,7 +6,9 @@
     "y": "20%",
     "width": "480px",
     "height": "400px",
-    "showMenuBar": true
+    "showMenuBar": true,
+    "resizable":true,
+    "maximize":true
   },
   {
     "title": "Internet",
@@ -15,7 +17,9 @@
     "y": "20%",
     "width": "480px",
     "height": "400px",
-    "showMenuBar": true
+    "showMenuBar": true,
+    "resizable":true,
+    "maximize":true
   },
   {
     "title": "AboutMe",
@@ -33,16 +37,20 @@
     "y": "10%",
     "width": "40%",
     "height": "80%",
-    "showMenuBar": true
+    "showMenuBar": true,
+    "resizable":true,
+    "maximize":true
   },
   {
-    "title": "Paint.js",
+    "title": "Paint",
     "icon": "jspaint.ico",
     "x": "40%",
     "y": "10%",
     "width": "55%",
     "height": "80%",
-    "showMenuBar":false
+    "showMenuBar":false,
+    "resizable":true,
+    "maximize":true
   },
   {
     "title": "ThisPC",
@@ -51,7 +59,9 @@
     "y": "10%",
     "width": "55%",
     "height": "80%",
-    "showMenuBar":true
+    "showMenuBar":true,
+    "resizable":true,
+    "maximize":true
   },
   {
     "title": "Github",
@@ -60,7 +70,9 @@
     "y": "10%",
     "width": "20%",
     "height": "80%",
-    "showMenuBar":false
+    "showMenuBar":false,
+    "resizable":true,
+    "maximize":true
   },
   {
     "title": "Customize",
@@ -69,6 +81,8 @@
     "y": "10%",
     "width": "25%",
     "height": "80%",
-    "showMenuBar":true
+    "showMenuBar":true,
+    "resizable":true,
+    "maximize":true
   }
 ]
