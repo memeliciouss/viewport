@@ -7,7 +7,7 @@ export default function About() {
 
   useEffect(() => {
     // Fetch ASCII art from public directory
-    fetch('/ascii-art.txt')
+    fetch('/ascii.txt')
       .then(response => response.text())
       .then(text => setAsciiArt(text))
       .catch(error => console.error('Error loading ASCII art:', error));
