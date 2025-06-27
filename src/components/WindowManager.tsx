@@ -18,6 +18,10 @@ interface AppConfig {
   showMenuBar?: boolean;
   maximize?: boolean;
   url?: string;
+  minwidth?: number;
+  minheight?: number;
+  maxwidth?: number;
+  maxheight?: number;
 }
 
 interface Props {
@@ -69,7 +73,11 @@ export default function WindowManager({ mounts, apps }: Props) {
       icon: config.icon ? `/icons/${config.icon}` : false,
       class: classList,
       top: '0',
-      bottom: '41px',
+      bottom: '41px', // to make space for taskbar
+      minwidth: config.minwidth,
+      minheight: config.minheight,
+      maxwidth: config.maxwidth,
+      maxheight: config.maxheight,
       onclose: () => {
         winboxRefs.current[title] = null;
       }

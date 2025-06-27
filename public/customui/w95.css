@@ -1619,12 +1619,9 @@ button.section-black:focus {
 
 .navbar .navbar-nav .nav-link {
     position: relative;
-    font-size: .65rem;
     color: black;
-    text-transform: normal;
     background: #C0C0C0;
     letter-spacing: 0;
-    font-weight: 400;
     padding: 4px 10px;
 }
 
@@ -1643,7 +1640,6 @@ button.section-black:focus {
 }
 
 .navbar .time {
-    font-size: .65rem;
     border-top: 1px solid #08080E;
     border-left: 1px solid #08080E;
     border-right: 1px solid #FCFCFC;
@@ -1679,7 +1675,6 @@ button.section-black:focus {
 
 .navbar .navbar-nav .dropdown .dropdown-item {
     font-weight: 400;
-    font-size: .85rem;
 }
 
 .navbar .navbar-nav .mega-dropdown {
@@ -1700,7 +1695,6 @@ button.section-black:focus {
 
 .navbar .navbar-nav .mega-dropdown h6 {
     margin: 15px 0;
-    font-size: 15px;
     font-weight: 500;
 }
 
@@ -1709,7 +1703,6 @@ button.section-black:focus {
 }
 
 .navbar-brand {
-    font-size: 0.875rem;
     font-weight: 500;
     text-transform: uppercase;
 }
@@ -1757,12 +1750,11 @@ button.section-black:focus {
     }
     .navbar-nav .nav-link i {
         margin-right: .3rem;
-        font-size: 0.75rem;
+
     }
     .navbar-nav .nav-link-icon {
         padding-left: .5rem;
         padding-right: .5rem;
-        font-size: 1rem;
         border-radius: 0.125rem;
     }
     .navbar-nav .nav-link-icon i {
@@ -5378,10 +5370,9 @@ textarea[resize="horizontal"] {
 }
 
 .nav-tabs .nav-item .nav-link {
-    font-size: .5rem;
+    font-size:13px;
     color: black;
     padding: .2rem 1.8rem;
-    font-style: italic;
     box-sizing: border-box;
     transform: none;
 }
@@ -6788,10 +6779,6 @@ a:hover,
 
 .lead {
     font-size: .9rem;
-}
-
-.text-italic {
-    font-style: italic !important;
 }
 
 .description {

@@ -1,6 +1,6 @@
 
 .winbox {
-    background-color:var(--background);
+    background-color:#C0C0C0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     cursor: var(--cursor-arrow);
@@ -99,7 +99,7 @@
 
 
 .wb-e,.wb-s{
-    background-color: #989494;
+    background-color: #808080;
 }
 .wb-e{
     right:-8px;
@@ -110,10 +110,10 @@
 
 
 .wb-body {
-    top:34px;
-    bottom:6px;
-    right:6px;
-    left:6px;
+    top:30px;
+    bottom:0px;
+    right:0px;
+    left:0px;
     background-color: #c0c0c0;
     color: black;
     font-family: "windows", sans-serif;

@@ -7,30 +7,40 @@
     "width": "480px",
     "height": "400px",
     "showMenuBar": true,
-    "resizable":true,
-    "maximize":true
+    "maximize": true,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "Internet",
     "icon": "world.ico",
     "x": "30%",
     "y": "8%",
-    "width": "60%",
-    "height": "80%",
+    "width": "100%",
+    "height": "70%",
     "showMenuBar": true,
-    "resizable":true,
-    "maximize":true,
-    "url":"https://oldgoogle.neocities.org/1998/"
+    "maximize": true,
+    "url": "https://oldgoogle.neocities.org/1998/",
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "AboutMe",
     "icon": "msagent.ico",
     "x": "20%",
     "y": "10%",
-    "width": "40%",
+    "width": "80%",
     "height": "50%",
     "showMenuBar": false,
-    "maximize":false
+    "maximize": false,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "Resume",
@@ -40,7 +50,11 @@
     "width": "40%",
     "height": "80%",
     "showMenuBar": true,
-    "maximize":true
+    "maximize": true,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "Paint",
@@ -49,9 +63,13 @@
     "y": "10%",
     "width": "55%",
     "height": "80%",
-    "showMenuBar":false,
-    "maximize":true,
-    "url":"https://jspaint.app"
+    "showMenuBar": false,
+    "maximize": true,
+    "url": "https://jspaint.app",
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "ThisPC",
@@ -60,8 +78,12 @@
     "y": "10%",
     "width": "55%",
     "height": "80%",
-    "showMenuBar":true,
-    "maximize":true
+    "showMenuBar": true,
+    "maximize": true,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "Github",
@@ -70,8 +92,12 @@
     "y": "10%",
     "width": "20%",
     "height": "80%",
-    "showMenuBar":false,
-    "maximize":true
+    "showMenuBar": false,
+    "maximize": true,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   },
   {
     "title": "Customize",
@@ -80,7 +106,11 @@
     "y": "10%",
     "width": "25%",
     "height": "80%",
-    "showMenuBar":true,
-    "maximize":false
+    "showMenuBar": true,
+    "maximize": false,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
   }
 ]
