@@ -4,6 +4,7 @@ import Deskapp from '@/components/deskapp';
 import WindowManager from '@/components/WindowManager';
 import Taskbar from '@/components/taskbar';
 import Customize from '@/components/customize';
+import About from '@/components/about';
 
 interface AppConfig {
   title: string;
@@ -48,13 +49,11 @@ export default function Home() {
         <Deskapp title="AboutMe" onOpen={handleOpen}/>
       </main>
 
-      {/* ✅ Mount content only once here */}
       <WindowManager
       apps={apps}
         mounts={{
           ThisPC: <div><h2>This PC</h2><p>yeah so this pc</p></div>,
-          AboutMe: <div><h2>something about me</h2></div>,
-          Resume: <iframe src="/data/RakshitRaj-resume.pdf" width="100%" height="600px" />,
+          AboutMe: <About/>,
           Customize:<Customize/>
         }}
       />

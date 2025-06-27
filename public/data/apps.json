@@ -27,10 +27,9 @@
     "icon": "msagent.ico",
     "x": "20%",
     "y": "10%",
-    "width": "360px",
-    "height": "280px",
-    "showMenuBar": true,
-    "resizable":false,
+    "width": "40%",
+    "height": "50%",
+    "showMenuBar": false,
     "maximize":false
   },
   {
@@ -41,7 +40,6 @@
     "width": "40%",
     "height": "80%",
     "showMenuBar": true,
-    "resizable":true,
     "maximize":true
   },
   {
@@ -52,7 +50,6 @@
     "width": "55%",
     "height": "80%",
     "showMenuBar":false,
-    "resizable":true,
     "maximize":true,
     "url":"https://jspaint.app"
   },
@@ -64,7 +61,6 @@
     "width": "55%",
     "height": "80%",
     "showMenuBar":true,
-    "resizable":true,
     "maximize":true
   },
   {
@@ -75,7 +71,6 @@
     "width": "20%",
     "height": "80%",
     "showMenuBar":false,
-    "resizable":true,
     "maximize":true
   },
   {
@@ -86,7 +81,6 @@
     "width": "25%",
     "height": "80%",
     "showMenuBar":true,
-    "resizable":false,
     "maximize":false
   }
 ]

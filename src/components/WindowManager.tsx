@@ -16,7 +16,6 @@ interface AppConfig {
   width?: string;
   height?: string;
   showMenuBar?: boolean;
-  resizable?: boolean;
   maximize?: boolean;
   url?: string;
 }
@@ -59,7 +58,6 @@ export default function WindowManager({ mounts, apps }: Props) {
     }
 
     const classList = ['my-theme'];
-    if (config.resizable === false) classList.push('no-resize');
     if (config.maximize === false) classList.push('no-max');
 
     const options: any = {
