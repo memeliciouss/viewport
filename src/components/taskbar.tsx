@@ -1,6 +1,33 @@
 'use client';
 import Image from 'next/image';
+import { useEffect } from 'react';
+
+
 export default function Taskbar() {
+  useEffect(() => {
+  const updateClock = () => {
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    const day = String(now.getDate()).padStart(2, '0');
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const year = now.getFullYear();
+    const date = `${day}/${month}/${year}`;
+
+    const timeElem = document.getElementById('clock-time');
+    const dateElem = document.getElementById('clock-date');
+    if (timeElem && dateElem) {
+      timeElem.textContent = time;
+      dateElem.textContent = date;
+    }
+  };
+
+  updateClock();
+  const interval = setInterval(updateClock, 1000);
+  return () => clearInterval(interval);
+}, []);
+
+
   return (
     <div
       style={{
@@ -17,7 +44,7 @@ export default function Taskbar() {
         zIndex: 1,
       }}
     >
-        <button
+      <button
         className="btn btn-primary d-flex align-items-center justify-content-center"
         style={{
           width: '114px',
@@ -41,7 +68,7 @@ export default function Taskbar() {
         />
         Start
       </button>
-       <div
+      <div
         style={{
           width: '2px',
           height: '80%',
@@ -49,6 +76,34 @@ export default function Taskbar() {
           margin: '0 3px',
         }}
       />
+      <div style={{ flexGrow: 1 }} /> {/* Spacer to push clock to right */}
+
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'flex-end',
+          width: '114px',
+          height: '37px',
+          padding: '2px 6px 0px 6px',
+          fontFamily: '"windows", sans-serif',
+          fontSize: '13px',
+          color: 'black',
+          backgroundColor: '#C3C3C3',
+          borderTop: '2px solid #6B6B6B',
+          borderLeft: '2px solid #6B6B6B',
+          borderBottom: '2px solid #FFFFFF',
+          borderRight: '2px solid #FFFFFF',
+          boxSizing: 'border-box',
+          lineHeight: '1.1',
+          textAlign: 'right',
+          marginRight:'3px'
+        }}
+      >
+        <span id="clock-time">--:--</span>
+        <span id="clock-date">--/--</span>
+      </div>
     </div>
   );
 }
