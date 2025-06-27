@@ -53,11 +53,8 @@ export default function Home() {
       apps={apps}
         mounts={{
           ThisPC: <div><h2>This PC</h2><p>yeah so this pc</p></div>,
-          Internet: <iframe src="https://google.com/search?igu=1" />,
           AboutMe: <div><h2>something about me</h2></div>,
           Resume: <iframe src="/data/RakshitRaj-resume.pdf" width="100%" height="600px" />,
-          Minesweeper: <iframe src='https://nickarocho.github.io/minesweeper/' />,
-          Paint: <iframe src="https://jspaint.app" />,
           Customize:<Customize/>
         }}
       />

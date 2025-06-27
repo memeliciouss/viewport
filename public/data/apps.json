@@ -13,13 +13,14 @@
   {
     "title": "Internet",
     "icon": "world.ico",
-    "x": "40%",
-    "y": "20%",
-    "width": "480px",
-    "height": "400px",
+    "x": "30%",
+    "y": "8%",
+    "width": "60%",
+    "height": "80%",
     "showMenuBar": true,
     "resizable":true,
-    "maximize":true
+    "maximize":true,
+    "url":"https://oldgoogle.neocities.org/1998/"
   },
   {
     "title": "AboutMe",
@@ -28,7 +29,9 @@
     "y": "10%",
     "width": "360px",
     "height": "280px",
-    "showMenuBar": true
+    "showMenuBar": true,
+    "resizable":false,
+    "maximize":false
   },
   {
     "title": "Resume",
@@ -50,7 +53,8 @@
     "height": "80%",
     "showMenuBar":false,
     "resizable":true,
-    "maximize":true
+    "maximize":true,
+    "url":"https://jspaint.app"
   },
   {
     "title": "ThisPC",
@@ -82,7 +86,7 @@
     "width": "25%",
     "height": "80%",
     "showMenuBar":true,
-    "resizable":true,
-    "maximize":true
+    "resizable":false,
+    "maximize":false
   }
 ]
