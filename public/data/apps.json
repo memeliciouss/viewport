@@ -33,14 +33,14 @@
     "icon": "msagent.ico",
     "x": "20%",
     "y": "8%",
-    "width": "85%",
-    "height": "78%",
+    "width": "75%",
+    "height": "450px",
     "showMenuBar": false,
     "maximize": false,
-    "minwidth": 200,
-    "minheight": 150,
-    "maxwidth": 1000,
-    "maxheight": 800
+    "minwidth": "75%",
+    "minheight": "450px",
+    "maxwidth": "75%",
+    "maxheight": "450px"
   },
   {
     "title": "Resume",
@@ -49,6 +49,7 @@
     "y": "10%",
     "width": "40%",
     "height": "80%",
+    "url":"https://drive.google.com/file/d/1ih21kC0bTbITx_K9ZprKglOLDYixuLFN/preview",
     "showMenuBar": true,
     "maximize": true,
     "minwidth": 200,

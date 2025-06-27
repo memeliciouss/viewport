@@ -5,6 +5,7 @@ import WindowManager from '@/components/WindowManager';
 import Taskbar from '@/components/taskbar';
 import Customize from '@/components/customize';
 import About from '@/components/about';
+import ContextMenu from '@/components/contextMenu';
 
 interface AppConfig {
   title: string;
@@ -28,36 +29,38 @@ export default function Home() {
     <>
       <main
         style={{
-          backgroundColor:'transparent',
+          backgroundColor: 'transparent',
           position: 'absolute',
           width: '100vw',
           height: '100vh',
+          padding: '18px 0 0 18px',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'flex-start',
-          justifyContent: 'flex-start',
-          paddingTop:'18px',
+          flexWrap: 'wrap',
+          alignContent: 'flex-start',
           gap: '12px',
+          maxHeight: '100vh',
         }}
       >
         {/* 🖱️ Only display selected desktop icons manually */}
-        <Deskapp title="ThisPC" onOpen={handleOpen}/>
-        <Deskapp title="Internet" onOpen={handleOpen}/>
-        <Deskapp title="Resume" onOpen={handleOpen}/>
-        <Deskapp title="Paint" onOpen={handleOpen}/>
-        <Deskapp title="Customize" onOpen={handleOpen}/>
-        <Deskapp title="AboutMe" onOpen={handleOpen}/>
+        <Deskapp title="ThisPC" onOpen={handleOpen} />
+        <Deskapp title="Internet" onOpen={handleOpen} />
+        <Deskapp title="AboutMe" onOpen={handleOpen} />
+        <Deskapp title="Resume" onOpen={handleOpen} />
+        <Deskapp title="Paint" onOpen={handleOpen} />
+        <Deskapp title="Customize" onOpen={handleOpen} />
       </main>
 
       <WindowManager
-      apps={apps}
+        apps={apps}
         mounts={{
           ThisPC: <div><h2>This PC</h2><p>yeah so this pc</p></div>,
-          AboutMe: <About/>,
-          Customize:<Customize/>
+          AboutMe: <About />,
+          Customize: <Customize />
         }}
       />
-      <Taskbar/>
+      <Taskbar />
+      <ContextMenu/>
     </>
   );
 }
