@@ -14,8 +14,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="w-full h-full bg-[#2C2C2C] flex">
-      {/* Left: Tabs + Content (2/3) - UNCHANGED */}
+    <div className="w-full h-full bg-[#2C2C2C] flex pb-5 ">
       <div className="w-2/3 flex flex-col bg-gray-100 dark:bg-[#2c2c2c] text-black dark:text-white p-2">
         {/* Tabs */}
         <ul className="nav nav-tabs" role="tablist">
@@ -33,7 +32,7 @@ export default function About() {
           ))}
         </ul>
 
-        {/* Tab Panels - UNCHANGED */}
+        {/* Tab Panels */}
         <div className="tab-content flex-1 pt-3">
           {/* About Tab */}
           {activeTab === 'about' && (
@@ -188,14 +187,18 @@ export default function About() {
         </div>
       </div>
 
-      {/* Right: ASCII Art (1/3) - MODIFIED */}
+      {/* Right: ASCII Art*/}
       <div
-        className="w-1/3 p-2 bg-[#1e1e1e] text-white font-mono text-sm ml-[-7px]"
-        style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+        className="w-1/3 bg-[#1e1e1e] text-white font-mono text-sm ml-[-7px]"
+        style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+          marginTop:"40px",
+          marginLeft:"-10px",
+          background:"transport"
+        }}
       >
-        <pre className="leading-tight whitespace-pre-wrap m-0 text-center">
-          {asciiArt || 'Loading ASCII art...'}
-        </pre>
+        <img src='data/RRBZ210000.png' draggable="false" style={{
+          width:"270px"
+        }}/>
       </div>
 
     </div>

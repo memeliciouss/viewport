@@ -3,18 +3,18 @@ import { useState, useEffect } from "react";
 import "@/styles/wallpaper.css";
 
 const wallpapers = [
-  { name: "Green", className: "wallpaper-default" },
+  { name: "Classic Green", className: "wallpaper-default" },
   { name: "Sky", className: "wallpaper-sky" },
   { name: "Night", className: "wallpaper-night" },
-  { name: "Grid", className: "wallpaper-grid" },
-  { name: "Purple Summer", className: "wallpaper-purple" },
-  { name: "Matt Blue", className: "wallpaper-matt" },
-  { name: "Vibe 98", className: "wallpaper-vibe" },
+  { name: "viewport", className: "wallpaper-viewport" },
+  { name: "the doors", className: "wallpaper-doors" }
 ];
 
 export default function Customize() {
-  const [selectedPreview, setSelectedPreview] = useState("wallpaper-default");
-  const [appliedWallpaper, setAppliedWallpaper] = useState(() => {
+  const [selectedPreview, setSelectedPreview] = useState(() => {
+    const active = wallpapers.find(wp => document.body.classList.contains(wp.className));
+    return active?.className || "wallpaper-default";
+  }); const [appliedWallpaper, setAppliedWallpaper] = useState(() => {
     const active = wallpapers.find(wp => document.body.classList.contains(wp.className));
     return active?.className || "wallpaper-default";
   });
@@ -49,7 +49,6 @@ export default function Customize() {
                 left: "19px",
                 width: "120px",
                 height: "90px",
-                backgroundColor: "#008080",
                 imageRendering: "pixelated",
               }}
             />

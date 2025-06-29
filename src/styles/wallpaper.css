@@ -1,23 +1,92 @@
 .wallpaper-default {
   background-color: var(--background);
+  position: relative;
 }
 
 .wallpaper-sky {
   background: linear-gradient(to bottom, #87ceeb, #ffffff);
+  position: relative;
 }
 
 .wallpaper-night {
   background: radial-gradient(circle, #2c3e50, #000000);
+  position: relative;
 }
 
-.wallpaper-grid {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      #ccc,
-      #ccc 1px,
-      transparent 1px,
-      transparent 20px
-    );
-  background-color: #333;
+.wallpaper-viewport {
+  background: #2a2828;
+  position: relative;
+}
+
+body.wallpaper-viewport::after {
+  content: "      .__                                     __   \A\
+___  _|__| ______  _  ________   ____________/  |_ \A\
+\\  \\/ /  |/ __ \\\\ \\/ \\/ /\\____ \\ /  _ \\_  __ \\   __\\\A\
+ \\   /|  \\  ___/\\     / |  |_> >  <_> )  | \\/|  |  \A\
+  \\_/ |__|\\___  >\\/\\_/  |   __/ \\____/|__|   |__|  \A\
+              \\/        |__|                        ";
+
+  position: absolute;
+  bottom: 10%; 
+  right: 6%;
+  font-family: monospace;
+  font-size: 12px;
+  white-space: pre;
+  line-height: 1.1;
+  color: #C0C0C0;
+  pointer-events: none;
+  z-index: -10;
+}
+  
+.wallpaper-doors {
+  background-color: #547772;
+  position: relative;
+}
+
+body.wallpaper-doors::after {
+  content: "     __\A\
+   THE |  |\A\
+    __ |  |   ___      ___    __       _  _\A\
+  ,'  ||  |  .   `.  ,'  ,'. |  |,'`.,' || `.\A\
+ :    ||  |:`.`.   ::  ,',' :|  .^..'`._|'--'\A\
+ :    ||  |:  `.`. ;:,','   ;|  |    .--.|``.\A\
+  `.__||__| `.__`.`   '___,' |__|    `._||_,' SSt\A\
+\A\
+                     _____\A\
+                   ,'    .`-._\A\
+                  / .-'  <>  .\\\A\
+                 / .  , '___..'-._\A\
+               .'/  `.`. _,'\A\
+               |.  `-.`./\A\
+              /`.` ` _. `.\A\
+             : .|  .' `  _`.\A\
+             ;  ;. .  .'`  _\\\A\
+            /. /\\:.  .  ,'`  \\\A\
+       _-.,'_,'  \\:. . .  ,-'':\A\
+       ``--'     ,'``-._.   ` |,-.\A\
+                 \\ . `  ` --''|, .\\ ,\A\
+                  \\.`._` .  ` | . :/|_\A\
+               _.-.>. \\:.  ,- :\\/\\.`./\A\
+              '`---'.,.'`.    .\\  `-'\A\
+                    '     `.`   `._\A\
+                            `-._`. ``.\A\
+                                `-. ` `.\A\
+                                   `.  .\\\A\
+                                     \\   :\A\
+                                      )` ;\A\
+               ____                  / ./\A\
+             ``-.._ ```----....___.-'.,'\A\
+                   ```----...._____.-'  SSt";
+
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 13px;
+  white-space: pre;
+  line-height: 1.1;
+  color: #000000;
+  pointer-events: none;
+  z-index: -10;
 }
