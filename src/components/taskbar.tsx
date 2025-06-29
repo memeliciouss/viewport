@@ -4,13 +4,12 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import StartMenu from './startmenu';
 
-export default function Taskbar() {
+export default function Taskbar({ onOpen }: { onOpen: (title: string) => void }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Close menu when clicking anywhere except the button
   useEffect(() => {
     if (!menuOpen) return;
-    
+
     const handleClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       const isStartButton = target.closest('button[onClick]');
@@ -47,9 +46,8 @@ export default function Taskbar() {
 
   return (
     <>
-      {menuOpen && (
-        <StartMenu/>
-      )}
+      {menuOpen && <StartMenu onOpen={onOpen} />}
+
 
       {/* Your existing Taskbar markup */}
       <div

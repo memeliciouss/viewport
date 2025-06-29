@@ -1,26 +1,45 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function StartMenu() {
-  const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+interface AppConfig {
+  title: string;
+  icon?: string;
+  external?: boolean;
+  url?: string;
+}
 
-  const menuItems = [
-    { icon: '/icons/thispc.ico', text: 'Project' },
-    { icon: '/icons/resume.ico', text: 'Resume' },
-    { icon: '/icons/github.png', text: 'Github' },
-    { icon: '/icons/linked.ico', text: 'Linked' },
-    { icon: '/icons/settings.ico', text: 'Settings' },
-    { icon: '/icons/run.ico', text: 'Run...' },
-    { icon: '/icons/shutdown.ico', text: 'Shut down...' }
-  ];
+export default function StartMenu({ onOpen }: { onOpen: (title: string) => void }) {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [apps, setApps] = useState<AppConfig[]>([]);
+
+  const startMenuApps = ['Github', 'Resume','Source Code'];
+  // define apps the sit on start menu
+
+  useEffect(() => {
+    fetch('/data/apps.json')
+      .then(res => res.json())
+      .then((data: AppConfig[]) => {
+        const filtered = data.filter(app => startMenuApps.includes(app.title));
+        setApps(filtered);
+      });
+  }, []);
+
+  const handleClick = (app: AppConfig) => {
+  if (app.external === true && app.url) {
+    window.open(app.url, '_blank');
+  } else {
+    onOpen(app.title); 
+  }
+};
+
 
   return (
     <div style={{
       position: 'fixed',
       bottom: '41px',
       left: '4px',
-      width: '250px', // width of start menu
+      width: '250px',
       backgroundColor: '#C0C0C0',
       borderTop: '2px solid #FFFFFF',
       borderLeft: '2px solid #FFFFFF',
@@ -30,6 +49,7 @@ export default function StartMenu() {
       display: 'flex',
       zIndex: 1000,
     }}>
+      {/* Vertical side label */}
       <div style={{
         width: '32px',
         backgroundColor: '#7B7D7B',
@@ -40,23 +60,23 @@ export default function StartMenu() {
         whiteSpace: 'pre',
         display: 'flex',
         alignItems: 'flex-start',
-        height: '250', // height of start menu
+        height: '300px',
       }}>
         <div style={{
-          fontFamily: ' Segoe UI',
+          fontFamily: 'Segoe UI',
           fontSize: '28px',
           fontWeight: 'bold',
           lineHeight: '8px',
-          color: '#BCBFBD', 
+          color: '#BCBFBD',
           padding: '8px 10px'
         }}>
           viewport
         </div>
         <div style={{
-          fontFamily: ' Segoe UI',
+          fontFamily: 'Segoe UI',
           fontSize: '20px',
           lineHeight: '8px',
-          color: '#BCBFBD', 
+          color: '#BCBFBD',
           padding: '0px 12px'
         }}>
           /memelicious
@@ -65,42 +85,35 @@ export default function StartMenu() {
 
       {/* Menu Items */}
       <div style={{ padding: '6px 0', flex: 1 }}>
-        {menuItems.map((item, index) => (
+        {apps.map((app, index) => (
           <div
-            key={index}
-            onMouseEnter={() => setHoveredItem(index)}
-            onMouseLeave={() => setHoveredItem(null)}
+            key={app.title}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+            onClick={() => handleClick(app)}
             style={{
               display: 'flex',
               alignItems: 'center',
               padding: '8px 12px',
               fontSize: '14px',
               cursor: 'default',
-              backgroundColor: hoveredItem === index ? '#000080' : 'transparent',
-              color: hoveredItem === index ? 'white' : 'black',
+              backgroundColor: hoveredIndex === index ? '#000080' : 'transparent',
+              color: hoveredIndex === index ? 'white' : 'black',
               gap: '12px'
             }}
           >
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              height: 'auto'
-            }}>
-              <Image
-                src={item.icon}
-                alt=""
-                width={28}
-                height={0} 
-                draggable={false}
-                style={{
-                  width: 'auto',
-                  height: '28px', 
-                  objectFit: 'contain',
-                  marginRight: '12px'
-                }}
-              />
-              <span>{item.text}</span>
-            </div>
+            <Image
+              src={`/icons/${app.icon}`}
+              alt=""
+              width={28}
+              height={28}
+              draggable={false}
+              style={{
+                objectFit: 'contain',
+                marginRight: '12px'
+              }}
+            />
+            <span>{app.title}</span>
           </div>
         ))}
       </div>

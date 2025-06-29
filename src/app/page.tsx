@@ -59,7 +59,7 @@ export default function Home() {
           Customize: <Customize />
         }}
       />
-      <Taskbar />
+      <Taskbar onOpen={handleOpen}/>
       <ContextMenu onPropertiesClick={() => handleOpen('Customize')} />
     </>
   );
