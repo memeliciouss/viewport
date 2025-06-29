@@ -3,67 +3,95 @@ import { useState, useEffect } from "react";
 import "@/styles/wallpaper.css";
 
 const wallpapers = [
-  { name: "Default", className: "wallpaper-default" },
+  { name: "Green", className: "wallpaper-default" },
   { name: "Sky", className: "wallpaper-sky" },
   { name: "Night", className: "wallpaper-night" },
   { name: "Grid", className: "wallpaper-grid" },
+  { name: "Purple Summer", className: "wallpaper-purple" },
+  { name: "Matt Blue", className: "wallpaper-matt" },
+  { name: "Vibe 98", className: "wallpaper-vibe" },
 ];
 
 export default function Customize() {
   const [selectedPreview, setSelectedPreview] = useState("wallpaper-default");
-  const [appliedWallpaper, setAppliedWallpaper] = useState("wallpaper-default");
+  const [appliedWallpaper, setAppliedWallpaper] = useState(() => {
+    const active = wallpapers.find(wp => document.body.classList.contains(wp.className));
+    return active?.className || "wallpaper-default";
+  });
 
-  // Apply on mount or when apply button is used
   useEffect(() => {
-    // Remove all existing wallpaper classes from body
     wallpapers.forEach(wp => document.body.classList.remove(wp.className));
     document.body.classList.add(appliedWallpaper);
   }, [appliedWallpaper]);
 
   return (
-    <div style={{ padding: "10px", fontFamily: "sans-serif" }}>
-      <label style={{ display: "block", marginBottom: "6px" }}>
-        Choose Wallpaper:
-      </label>
+    <div style={{ padding: "10px", width: "340px" }}>
+      <div className="window-body">
 
-      <select
-        className="select"
-        value={selectedPreview}
-        onChange={(e) => setSelectedPreview(e.target.value)}
-      >
-        {wallpapers.map((wp) => (
-          <option key={wp.className} value={wp.className}>
-            {wp.name}
-          </option>
-        ))}
-      </select>
+        {/* Monitor preview */}
+        <div style={{ display: "flex", justifyContent: "center", padding: "12px" }}>
+          <div
+            style={{
+              width: "160px",
+              height: "136px",
+              backgroundImage: 'url("/data/crt.png")',
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              position: "relative",
+            }}
+          >
+            <div
+              className={`preview-box ${selectedPreview}`}
+              style={{
+                position: "absolute",
+                top: "16px",
+                left: "19px",
+                width: "120px",
+                height: "90px",
+                backgroundColor: "#008080",
+                imageRendering: "pixelated",
+              }}
+            />
+          </div>
+        </div>
 
-      <div style={{ marginTop: "12px" }}>
-        <label style={{ display: "block", marginBottom: "4px" }}>Preview:</label>
-        <div
-          className={selectedPreview}
-          style={{
-            width: "240px",     // 4:3 aspect ratio
-            height: "180px",
-            border: "2px inset #fff",
-            boxShadow: "0 0 4px rgba(0,0,0,0.2)",
-            marginBottom: "10px"
-          }}
-        />
+
+        {/* Wallpaper list */}
+        <fieldset style={{ margin: "0 12px 10px 12px" }}>
+          <span className="block text-[16px]">Wallpaper</span>
+          <div className="listbox-95" style={{ height: "130px" }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+              {wallpapers.map((wp) => (
+                <li
+                  key={wp.className}
+                  onClick={() => setSelectedPreview(wp.className)}
+                  style={{
+                    fontSize: "12px",
+                    padding: "0px 6px",
+                    backgroundColor: selectedPreview === wp.className ? "#000080" : "white",
+                    color: selectedPreview === wp.className ? "white" : "black",
+                    cursor: "pointer",
+                  }}
+                >
+                  {wp.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </fieldset>
+
+        {/* Buttons */}
+        <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "10px", marginRight: "12px" }}>
+
+          <button className="btn mr-2 mb-2 btn-primary"
+            onClick={() => setAppliedWallpaper(selectedPreview)}
+            type="button">
+            <span className="block text-[11px]">Apply</span>
+          </button>
+
+        </div>
       </div>
-
-      <button
-        className="btn"
-        style={{
-          fontSize: "14px",
-          fontFamily: '"windows", sans-serif',
-          padding: "4px 8px",
-          cursor: "var(--cursor-arrow)"
-        }}
-        onClick={() => setAppliedWallpaper(selectedPreview)}
-      >
-        Apply
-      </button>
     </div>
   );
 }

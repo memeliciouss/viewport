@@ -1,17 +1,19 @@
-
 .winbox {
-    background-color:#C0C0C0;
+    background-color: #C0C0C0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     cursor: var(--cursor-arrow);
 }
-.deskIcon{
+
+.deskIcon {
     cursor: var(--cursor-arrow) !important;
 }
 
-.winbox.min{
-    margin-left:126px; /* to provide room for start button in taskbar*/
-    margin-top:38px; /* to compensate bottom limit and make minimized window appear on taskbar */
+.winbox.min {
+    margin-left: 126px;
+    /* to provide room for start button in taskbar*/
+    margin-top: 38px;
+    /* to compensate bottom limit and make minimized window appear on taskbar */
     /* miinimized window is 35px thick */
     /* margin-right:80px; --> doensn't work*/
 }
@@ -20,8 +22,8 @@
     background-color: #14055D;
 }
 
-.wb-header{
-    height:28px;
+.wb-header {
+    height: 28px;
 }
 
 .wb-title {
@@ -39,7 +41,7 @@
 
 .winbox:not(.focus) .wb-drag,
 .winbox:not(.focus) .wb-title,
-.winbox:not(.focus) .wb-control{
+.winbox:not(.focus) .wb-control {
     background-color: #747578;
 }
 
@@ -51,7 +53,7 @@
     max-width: 100%;
     align-items: center;
     display: inline-flex;
-    margin-right:6px;
+    margin-right: 6px;
 }
 
 .wb-close,
@@ -65,9 +67,9 @@
     font-weight: bold;
     align-items: center;
     justify-content: center;
-    margin-left:5px;
-    margin-top:px;
-    cursor:var(--cursor-arrow);
+    margin-left: 5px;
+    margin-top: px;
+    cursor: var(--cursor-arrow);
 }
 
 .wb-min {
@@ -83,90 +85,105 @@
 }
 
 .wb-icon {
-    height:120%;
-    margin:-1px 0px 0-3px;
+    height: 120%;
+    margin: -1px 0px 0-3px;
 }
 
-.wb-n,.wb-w{
+.wb-n,
+.wb-w {
     background-color: #FFFEFE;
 }
-.wb-n{
-    top:-9px;
+
+.wb-n {
+    top: -9px;
 }
-.wb-w{
-    left:-8px;
+
+.wb-w {
+    left: -8px;
 }
 
 
-.wb-e,.wb-s{
+.wb-e,
+.wb-s {
     background-color: #808080;
 }
-.wb-e{
-    right:-8px;
+
+.wb-e {
+    right: -8px;
 }
-.wb-s{
-    bottom:-8px;
+
+.wb-s {
+    bottom: -8px;
 }
 
 
 .wb-body {
-    top:30px;
-    bottom:0px;
-    right:0px;
-    left:0px;
+    top: 30px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
     background-color: #c0c0c0;
     color: black;
     font-family: "windows", sans-serif;
     font-size: 13px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .winbox-menu-bar {
-  width: 100%;
-  background-color: #C5C5C4;
-  font-family: "windows", sans-serif;
-  font-size: 13px;
-  color: black;
-  display: flex;
-  gap:8px;
-  user-select: none;
-  border-bottom: 1px solid #888;
-  padding: 0px 8px;
-  cursor:var(--cursor-arrow);
+    width: 100%;
+    background-color: #C5C5C4;
+    font-family: "windows", sans-serif;
+    font-size: 13px;
+    color: black;
+    display: flex;
+    gap: 8px;
+    user-select: none;
+    border-bottom: 1px solid #888;
+    padding: 0px 8px;
+    cursor: var(--cursor-arrow);
 }
 
-.winbox-body{
-    padding:8px;
+.winbox-body {
+    padding: 8px;
 }
 
 .desktop-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  outline: none;
-  cursor:var(--cursor-arrow);
-  user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: none;
+    cursor: var(--cursor-arrow);
+    user-select: none;
+    border-style: dotted;
+    border-color: transparent;
+    border-width: 1px;
 }
-.desktop-icon:active {
-  cursor:var(--cursor-grab);
-  user-select: none;
-}
-.icon-label {
-  display: inline;
-  font-size: 14px; /* Updated font size */
-  font-family: "windows", sans-serif;
-  color: white;
-  line-height: 1.2;
-  white-space: nowrap;
 
-  /* Reserve space for border and padding */
-  border: 1px dotted transparent;
-  padding: 2px 4px; /* Slightly more breathing room for larger text */
-  background: transparent;
+.desktop-icon:active {
+    cursor: var(--cursor-grab);
+    user-select: none;
+
+
+}
+
+.icon-label {
+    display: inline;
+    font-size: 14px;
+    /* Updated font size */
+    font-family: "windows", sans-serif;
+    color: white;
+    line-height: 1.2;
+    white-space: nowrap;
+
+    /* Reserve space for border and padding */
+    border: 1px dotted transparent;
+    padding: 2px 4px;
+    /* Slightly more breathing room for larger text */
+    background: transparent;
 }
 
 .desktop-icon:focus .icon-label {
-  background-color: #000080;
-  border-color: white;
-  border-style: dotted;
+    background-color: #000080;
+    border-color: white;
+    border-style: dotted;
 }

@@ -1,5 +1,31 @@
 
 /* windows 95 UI library built on bootstrap */
+.listbox-95 {
+  overflow-y: auto;
+  background-color: white;
+  border: 2px inset #d4d0c8;
+  padding: 1px;
+  scrollbar-width: auto;
+  scrollbar-color: #b2b2b3 #ffffff;
+}
+
+.listbox-95::-webkit-scrollbar {
+  width: 14px;
+}
+
+.listbox-95::-webkit-scrollbar-track {
+  background: #ffffff;
+  border-left: 2px solid #7b7d7b;
+  border-top: 2px solid #7b7d7b;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+.listbox-95::-webkit-scrollbar-thumb {
+  background-color: #b2b2b3;
+  border: 2px solid #ffffff;
+  box-shadow: inset -1px -1px #7b7d7b;
+}
 
 .bg-primary {
     background-color: #c0c0c0 !important;
@@ -5353,6 +5379,7 @@ textarea[resize="horizontal"] {
     background: #c0c0c0;
     padding: 1rem 1.4rem;
 }
+
 
 .nav-tabs {
     border-bottom: 2px solid #DEDEDF;

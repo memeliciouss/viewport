@@ -27,7 +27,7 @@ export default function Deskapp({ title, onOpen }: DeskappProps) {
 
   return (
     <Draggable grid={[46, 46.5]} bounds="parent" nodeRef={nodeRef}>
-      <div
+      <div tabIndex={0}
         ref={nodeRef}
         className="deskIcon"
         style={{

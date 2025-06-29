@@ -103,15 +103,15 @@
   {
     "title": "Customize",
     "icon": "monitor.ico",
-    "x": "40%",
+    "x": "20%",
     "y": "10%",
-    "width": "25%",
-    "height": "80%",
-    "showMenuBar": true,
+    "width": "350",
+    "height": "450",
+    "showMenuBar": false,
     "maximize": false,
-    "minwidth": 200,
-    "minheight": 150,
-    "maxwidth": 1000,
-    "maxheight": 800
+    "minwidth": 350,
+    "minheight": 440,
+    "maxwidth": "360",
+    "maxheight": 450
   }
 ]
