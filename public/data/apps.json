@@ -1,5 +1,19 @@
 [
   {
+    "title": "ThisPC",
+    "icon": "computer.png",
+    "x": "10%",
+    "y": "12%",
+    "width": "40%",
+    "height": "50%",
+    "showMenuBar": true,
+    "maximize": true,
+    "minwidth": 200,
+    "minheight": 150,
+    "maxwidth": 1000,
+    "maxheight": 800
+  },
+  {
     "title": "Internet",
     "icon": "world.ico",
     "x": "30%",
@@ -53,20 +67,6 @@
     "showMenuBar": false,
     "maximize": true,
     "url": "https://jspaint.app",
-    "minwidth": 200,
-    "minheight": 150,
-    "maxwidth": 1000,
-    "maxheight": 800
-  },
-  {
-    "title": "ThisPC",
-    "icon": "computer.png",
-    "x": "40%",
-    "y": "10%",
-    "width": "55%",
-    "height": "80%",
-    "showMenuBar": true,
-    "maximize": true,
     "minwidth": 200,
     "minheight": 150,
     "maxwidth": 1000,
