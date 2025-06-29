@@ -18,7 +18,7 @@
   position: relative;
 }
 
-body.wallpaper-viewport::after {
+.wallpaper-viewport::after {
   content: "      .__                                     __   \A\
 ___  _|__| ______  _  ________   ____________/  |_ \A\
 \\  \\/ /  |/ __ \\\\ \\/ \\/ /\\____ \\ /  _ \\_  __ \\   __\\\A\
@@ -27,7 +27,7 @@ ___  _|__| ______  _  ________   ____________/  |_ \A\
               \\/        |__|                        ";
 
   position: absolute;
-  bottom: 10%; 
+  bottom: 10%;
   right: 6%;
   font-family: monospace;
   font-size: 12px;
@@ -37,7 +37,7 @@ ___  _|__| ______  _  ________   ____________/  |_ \A\
   pointer-events: none;
   z-index: -10;
 }
-  
+
 .wallpaper-doors {
   background-color: #547772;
   position: relative;
@@ -87,6 +87,83 @@ body.wallpaper-doors::after {
   white-space: pre;
   line-height: 1.1;
   color: #000000;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.wallpaper-artist {
+  background: #445271 ;
+  position: relative;
+}
+
+.wallpaper-artist::after {
+  content: "                  H|| \A\
+        __________H||___________\A\
+       [|.......................|\A\
+       ||.........## --.#.......|                       \A\
+       ||.........   #  # ......|            @@@@	\A\
+       ||.........     *  ......|          @@@@@@@      \A\
+       ||........     -^........|   ,      - @@@@       \A\
+       ||.....##\\        .......|   |     '_ @@@        \A\
+       ||....#####     /###.....|   |     __\\@ \\@       \A\
+       ||....########\\ \\((#.....|  _\\\\  (/ ) @\\_/)____  \A\
+       ||..####,   ))/ ##.......|   |(__/ /     /|% #/ 	\A\
+       ||..#####      '####.....|    \\___/ ----/_|-*/   \A\
+       ||..#####\\____/#####.....|       ,:   '(         \A\
+       ||...######..######......|       |:     \\        \A\
+       ||.....\"\"\"\"  \"\"\"\" ...    |       |:      )      \A\
+       [|_______________________|       |:      |       \A\
+              H||_______H||             |_____,_|       \A\
+              H||________\\|              |   / (        \A\
+              H||       H||              |  /\\  )       \A\
+              H||       H||              (  \\| /        \A\
+             _H||_______H||__            |  /'=.        \A\
+           H|________________|           '=>/  \\       \A\
+                                        /  \\ /|/	\A\
+                                      ,___/|             ";
+  font-family: monospace;
+  white-space: pre;
+  font-size: 16px;
+  line-height: 1.1;
+  color: #C0C0C0;
+  position: absolute;
+  bottom: 64px;
+  right: 48px;
+  pointer-events: none;
+  z-index: -10;
+}
+
+.wallpaper-drums {
+  background-color: #714452 ;
+  position: relative;
+}
+
+.wallpaper-drums::after {
+  content: "                                ,---.      .--.\A\
+                               (  .  )    (  . )\A\
+                                \`/--___  __\`--\`.\A\
+                            ,. _'| |___||___| _|\`.\A\
+                           (-./_,|-,,'     \`.' |\\ \`\A\
+                          __\`-\`-'|//     \`:. \\,|'\A\
+          --     -   --- |\\    | |||       \` | |\A\
+             --          | \\  _|_|\\\\   meme  / |\A\
+      -            _     \\  \\  ,-'-.\`._____,',-'-.\A\
+   ______________      \`[]\\ .\\____________________\A\
+  |\`.____________\`.     || \\| .::'        ._\A\
+  | |_''_o_o__o =.|     ||  \\|_________________\A\
+  | | ,--.   ,--. :   _ ||\A\
+  | |( () ) ( () )|:  \\`::')   ---        __\A\
+  \`.|_\`-_'___\`-_'_|\`. / :: \\\A\
+  -           _  -  : \\___:/    _   -    -\A\
+                    \`--..___)";
+  position: absolute;
+  bottom: 64px;
+  right: 48px;
+  font-family: monospace;
+  font-size: 16px;
+  white-space: pre;
+  line-height: 1.1;
+  color: #C0C0C0;
   pointer-events: none;
   z-index: -10;
 }

@@ -7,7 +7,9 @@ const wallpapers = [
   { name: "Sky", className: "wallpaper-sky" },
   { name: "Night", className: "wallpaper-night" },
   { name: "viewport", className: "wallpaper-viewport" },
-  { name: "the doors", className: "wallpaper-doors" }
+  { name: "the doors", className: "wallpaper-doors" },
+  { name: "Artist", className: "wallpaper-artist" },
+  { name: "Drums", className: "wallpaper-drums" },
 ];
 
 export default function Customize() {
