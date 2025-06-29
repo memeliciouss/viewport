@@ -26,17 +26,19 @@ export default function Deskapp({ title, onOpen }: DeskappProps) {
   }, [title]);
 
   return (
-    <Draggable grid={[46, 46.5]} bounds="parent" nodeRef={nodeRef}>
+    <Draggable grid={[46, 45]} bounds="parent" nodeRef={nodeRef}>
       <div tabIndex={0}
         ref={nodeRef}
         className="deskIcon"
         style={{
           width: '80px',
+          height:'78px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           cursor: 'var(--cursor-arrow)',
           userSelect: 'none',
+          padding:'5px'
         }}
         onDoubleClick={() => onOpen(title)}
       >

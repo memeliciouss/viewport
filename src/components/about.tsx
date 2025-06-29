@@ -3,101 +3,83 @@ import React, { useState, useEffect } from 'react';
 
 export default function About() {
   const [activeTab, setActiveTab] = useState<'about' | 'tech' | 'connect'>('about');
-  const [asciiArt, setAsciiArt] = useState('');
-
-  useEffect(() => {
-    // Fetch ASCII art from public directory
-    fetch('/ascii.txt')
-      .then(response => response.text())
-      .then(text => setAsciiArt(text))
-      .catch(error => console.error('Error loading ASCII art:', error));
-  }, []);
 
   return (
-    <div className="w-full h-full bg-[#2C2C2C] flex pb-5 ">
-      <div className="w-2/3 flex flex-col bg-gray-100 dark:bg-[#2c2c2c] text-black dark:text-white p-2">
+    <div className="page-container">
+      <div className="content-section">
         {/* Tabs */}
-        <ul className="nav nav-tabs" role="tablist">
-          {['about', 'tech', 'connect'].map((tab) => (
-            <li className="nav-item" key={tab}>
-              <button
-                className={`nav-link ${activeTab === tab ? 'active' : ''}`}
+        <div className="tab-shell">
+          <div className="tab-bar">
+            {['about', 'tech', 'connect'].map((tab) => (
+              <div
+                key={tab}
+                className={`tab ${activeTab === tab ? 'active' : ''}`}
                 onClick={() => setActiveTab(tab as 'about' | 'tech' | 'connect')}
-                role="tab"
-                aria-selected={activeTab === tab}
               >
-                {tab === 'about' ? 'About' : tab === 'tech' ? 'Tech Stack' : 'Connect'}
-              </button>
-            </li>
-          ))}
-        </ul>
+                {tab === 'about' ? 'About' : 'Tech Stack'}
+              </div>
+            ))}
+          </div>
+
+          <div className="tab-panel">
+            {/* your tab content */}
+          </div>
+        </div>
 
         {/* Tab Panels */}
-        <div className="tab-content flex-1 pt-3">
+        <div className="tab-content-container">
           {/* About Tab */}
           {activeTab === 'about' && (
-            <div className="tab-pane show active" role="tabpanel">
-              <span className="block text-[24px] font-bold">Rakshit Raj</span>
-              <div className="h-[1px] w-1/2 bg-gray-400/40 my-2" />
+            <div className="tab-panel-content">
+              <span className="title-large" style={{fontSize:'24px',fontWeight:'600'}}>Rakshit Raj</span>
 
-              <p className="mb-3 leading-relaxed">
-                <span className="block text-[14px]">Pre-final year engineering undergrad</span>
-                <span className="block text-[14px]">Curious mind for software, computers, and robotics.</span>
-                <span className="block text-[14px]">I enjoy building things that click, compute, or come to life.</span>
-                <span className="block text-[14px]">Outside tech, I'm drawn to movies, music, sketching, games, space, and the occasional chess match.</span>
-              </p>
+              <div className="paragraph" style={{ fontSize:'14px',display:'flex',flexDirection:'column',gap:'4px'}}>
+                <p className="text-line">Pre-final year engineering undergrad</p>
+                <p className="text-line">Curious mind for software, computers, and robotics.</p>
+                <p className="text-line">I enjoy building things that click, compute, or come to life.</p>
+                <p className="text-line">Outside tech, I'm drawn to movies, music, sketching, games, space, and the occasional chess match.</p>
+              </div>
             </div>
           )}
 
           {/* Tech Stack Tab */}
           {activeTab === 'tech' && (
-            <div className="tab-pane show active" role="tabpanel">
-              <span className="block text-[24px]">Tech Stack</span>
+            <div className="tab-panel-content">
+              <span className="title-large">Tech Stack</span>
 
-              <div className="h-[1px] w-1/2 bg-gray-400/40 mb-3" />
-              <div className="bg-[#c0c0c0] p-3 font-mono text-[14px] leading-relaxed border border-black space-y-2">
-                <div><span className="font-bold">Languages:</span> Python, C++, Java, HTML</div>
-                <div><span className="font-bold">Web Dev:</span> Next.js, Bootstrap, Tailwind CSS, Django, Flask, Django REST Framework</div>
-                <div><span className="font-bold">Databases:</span> MySQL, PostgreSQL, SQLite</div>
-                <div><span className="font-bold">Data & Analytics:</span> Pandas, NumPy, Advanced Excel</div>
-                <div><span className="font-bold">Robotics & Hardware:</span> ROS2, Arduino, Arduino IDE, IoT, PlatformIO</div>
-                <div><span className="font-bold">DevOps & Tools:</span> Git, GitHub, Docker, Linux</div>
-                <div><span className="font-bold">Eng. Design:</span> Fusion360, AutoCAD</div>
-                <div><span className="font-bold">Design Tools:</span> Figma, Canva, GIMP</div>
+              <div className="divider" />
+              <div className="tech-stack-box" style={{ fontFamily: 'sans-serif', gap: '2px' }}>
+                <div><span style={{ fontWeight: 600 }}>Languages:</span> Python, C++, Java, HTML</div>
+                <div><span style={{ fontWeight: 600 }}>Web Dev:</span> Next.js, Bootstrap, Tailwind CSS, Django, Flask, Django REST Framework</div>
+                <div><span style={{ fontWeight: 600 }}>Databases:</span> MySQL, PostgreSQL, SQLite</div>
+                <div><span style={{ fontWeight: 600 }}>Data & Analytics:</span> Pandas, NumPy, Advanced Excel</div>
+                <div><span style={{ fontWeight: 600 }}>Robotics & Hardware:</span> ROS2, Arduino, Arduino IDE, IoT, PlatformIO</div>
+                <div><span style={{ fontWeight: 600 }}>DevOps & Tools:</span> Git, GitHub, Docker, Linux</div>
+                <div><span style={{ fontWeight: 600 }}>Eng. Design:</span> Fusion360, AutoCAD</div>
+                <div><span style={{ fontWeight: 600 }}>Design Tools:</span> Figma, Canva, GIMP</div>
               </div>
-
             </div>
           )}
 
           {/* Connect Tab */}
           {activeTab === 'connect' && (
-            <div className="flex flex-col gap-2">
-              <span className="block text-[24px]">Let's Connect</span>
+            <div className="connect-container">
+              <span className="title-large">Let's Connect</span>
 
-              <div className="h-[1px] w-1/2 bg-gray-400/40 mb-3" />
+              <div className="divider" />
               {/* GitHub */}
               <a
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-primary d-flex align-items-center justify-content-start"
-                style={{
-                  width: '160px',
-                  height: '38px',
-                  padding: '0 6px',
-                  fontFamily: '"windows", sans-serif',
-                  fontSize: '14px',
-                  cursor: 'var(--cursor-arrow)',
-                  gap: '6px',
-                  textDecoration: 'none',
-                }}
+                className="social-button"
               >
                 <img
                   src="/icons/github.ico"
                   alt="GitHub"
                   width={18}
                   height={18}
-                  style={{ pointerEvents: 'none' }}
+                  className="button-icon"
                 />
                 GitHub
               </a>
@@ -107,24 +89,14 @@ export default function About() {
                 href="https://linkedin.com/in/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-primary d-flex align-items-center justify-content-start"
-                style={{
-                  width: '160px',
-                  height: '38px',
-                  padding: '0 6px',
-                  fontFamily: '"windows", sans-serif',
-                  fontSize: '14px',
-                  cursor: 'var(--cursor-arrow)',
-                  gap: '6px',
-                  textDecoration: 'none',
-                }}
+                className="social-button"
               >
                 <img
                   src="/icons/linkedin.ico"
                   alt="LinkedIn"
                   width={18}
                   height={18}
-                  style={{ pointerEvents: 'none' }}
+                  className="button-icon"
                 />
                 LinkedIn
               </a>
@@ -134,24 +106,14 @@ export default function About() {
                 href="https://letterboxd.com/yourprofile"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-primary d-flex align-items-center justify-content-start"
-                style={{
-                  width: '160px',
-                  height: '38px',
-                  padding: '0 6px',
-                  fontFamily: '"windows", sans-serif',
-                  fontSize: '14px',
-                  cursor: 'var(--cursor-arrow)',
-                  gap: '6px',
-                  textDecoration: 'none',
-                }}
+                className="social-button"
               >
                 <img
                   src="/icons/letterboxd.ico"
                   alt="Letterboxd"
                   width={18}
                   height={18}
-                  style={{ pointerEvents: 'none' }}
+                  className="button-icon"
                 />
                 Letterboxd
               </a>
@@ -161,24 +123,14 @@ export default function About() {
                 href="https://open.spotify.com/user/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-sm btn-primary d-flex align-items-center justify-content-start"
-                style={{
-                  width: '160px',
-                  height: '38px',
-                  padding: '0 6px',
-                  fontFamily: '"windows", sans-serif',
-                  fontSize: '14px',
-                  cursor: 'var(--cursor-arrow)',
-                  gap: '6px',
-                  textDecoration: 'none',
-                }}
+                className="social-button"
               >
                 <img
                   src="/icons/spotify.ico"
                   alt="Spotify"
                   width={18}
                   height={18}
-                  style={{ pointerEvents: 'none' }}
+                  className="button-icon"
                 />
                 Spotify
               </a>
@@ -188,19 +140,9 @@ export default function About() {
       </div>
 
       {/* Right: ASCII Art*/}
-      <div
-        className="w-1/3 bg-[#1e1e1e] text-white font-mono text-sm ml-[-7px]"
-        style={{ height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-          marginTop:"40px",
-          marginLeft:"-10px",
-          background:"transport"
-        }}
-      >
-        <img src='data/RRBZ210000.png' draggable="false" style={{
-          width:"270px"
-        }}/>
-      </div>
-
+      {/* <div className="ascii-art-container">
+        <img src='data/RRBZ210000.png' draggable="false" className="ascii-image" />
+      </div> */}
     </div>
   );
 }

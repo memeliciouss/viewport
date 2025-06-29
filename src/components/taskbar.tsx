@@ -1,5 +1,4 @@
 'use client';
-import { Stardos_Stencil } from 'next/font/google';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import StartMenu from './startmenu';
@@ -70,22 +69,10 @@ export default function Taskbar({ onOpen }: { onOpen: (title: string) => void })
             e.stopPropagation();
             setMenuOpen(prev => !prev);
           }}
-          className="btn btn-primary d-flex align-items-center justify-content-center"
+          className="w-button" 
           style={{
             width: '114px',
-            height: '41px',
-            padding: '0 4px',
-            fontFamily: '"windows", sans-serif',
-            fontSize: '16px',
-            cursor: 'var(--cursor-arrow)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: menuOpen ? '#C0C0C0' : '#B2B2B3',
-            borderTop: menuOpen ? '2px solid #404040' : '2px solid #FFFFFF',
-            borderLeft: menuOpen ? '2px solid #404040' : '2px solid #FFFFFF',
-            borderBottom: menuOpen ? '2px solid #FFFFFF' : '2px solid #404040',
-            borderRight: menuOpen ? '2px solid #FFFFFF' : '2px solid #404040',
+            height: '37px',
           }}
         >
           <Image

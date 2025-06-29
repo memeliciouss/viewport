@@ -33,7 +33,7 @@ export default function Home() {
           position: 'absolute',
           width: '100vw',
           height: '100vh',
-          padding: '18px 0 0 18px',
+          padding: '18px 18px 0 18px',
           display: 'flex',
           flexDirection: 'column',
           flexWrap: 'wrap',
