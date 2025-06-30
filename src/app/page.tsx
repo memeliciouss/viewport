@@ -6,7 +6,6 @@ import Taskbar from '@/components/taskbar';
 import Customize from '@/components/customize';
 import About from '@/components/about';
 import ContextMenu from '@/components/contextMenu';
-
 interface AppConfig {
   title: string;
   icon?: string;
@@ -56,7 +55,7 @@ export default function Home() {
         mounts={{
           ThisPC: <div><h2>This PC</h2><p>yeah so this pc</p></div>,
           AboutMe: <About />,
-          Customize: <Customize />
+          Customize: <Customize />,
         }}
       />
       <Taskbar onOpen={handleOpen}/>

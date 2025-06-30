@@ -16,6 +16,7 @@
     /* to compensate bottom limit and make minimized window appear on taskbar */
     /* miinimized window is 35px thick */
     /* margin-right:80px; --> doensn't work*/
+    /* margin-right now works after deobfuscating win.min.js and modifying function */
 }
 
 .wb-drag {
@@ -169,16 +170,13 @@
 .icon-label {
     display: inline;
     font-size: 14px;
-    /* Updated font size */
     font-family: "windows", sans-serif;
     color: white;
     line-height: 1.2;
     white-space: nowrap;
 
-    /* Reserve space for border and padding */
     border: 1px dotted transparent;
     padding: 2px 4px;
-    /* Slightly more breathing room for larger text */
     background: transparent;
 }
 
@@ -191,70 +189,80 @@
 /* buttons */
 
 .w-button {
-  background-color: #C0C0C0;
-  border-style: solid;
-  border-width: 2px;
-  border-color: #FFFFFF #404040 #404040 #FFFFFF;
-  font: 'windows';
-  color: black;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    font: 'windows';
+    background-color: #C0C0C0;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #FFFFFF #404040 #404040 #FFFFFF;
+    font: 'windows';
+    color: black;
+    padding: 3px;
+    box-sizing: border-box;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
 }
 
 /* Pressed */
 .w-button:active {
-  border-color: #404040 #FFFFFF #FFFFFF #404040;
+    border-color: #404040 #FFFFFF #FFFFFF #404040;
 }
 
-.divider{
+.divider {
     border: #404040;
     border-width: 1px;
 }
 
-/* Windows 95 Tabs with Content Border */
 .tab-shell {
     background-color: transparent;
 }
 
 .tab-bar {
-  display: flex;
-  gap: 0px;
-  padding-left: 0px;
+    display: flex;
+    gap: 0px;
+    padding-left: 0px;
 }
 
 .tab {
-  padding: 3px 12px;
-  background: #c0c0c0;
-  border: 2px solid;
-  border-color: #ffffff #808080 #ffffff #ffffff;
-  font-family: "windows";
-  font-size: 11px;
-  color: black;
-  cursor: default;
-  position: relative;
-  top: 2px;
-  margin-bottom: 2px;
+    padding: 3px 12px;
+    background: #c0c0c0;
+    border: 2px solid;
+    border-color: #ffffff #808080 #ffffff #ffffff;
+    font-family: "windows";
+    font-size: 11px;
+    color: black;
+    cursor: default;
+    position: relative;
+    top: 2px;
+    margin-bottom: 2px;
 }
 
 .tab.active {
-  background: #dfdfdf;
-  border-color: #ffffff #808080 transparent #ffffff;
-  padding-bottom: 0px;
-  margin-top: -2px;
-  z-index: 10;
+    background: #dfdfdf;
+    border-color: #ffffff #808080 transparent #ffffff;
+    padding-bottom: 0px;
+    margin-top: -2px;
+    z-index: 10;
 }
 
-/* Only added this one new rule for content */
 .tab-content-container {
-  border: 2px solid;
-  border-color: #ffffff #808080 #808080 #ffffff;
-  background: #dfdfdf;
-  margin-top: -2px;
-  padding: 8px;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    background: #dfdfdf;
+    margin-top: -2px;
+    padding: 8px 14px;
+    height: 350px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.divider {
+    height: 2px;
+    background: #808080;
+    border-top: 1px solid #FFFEFE;
+    margin: 8px 0;
+    width: 50%;
 }
