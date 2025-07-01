@@ -94,7 +94,7 @@ export default function Customize() {
 
             {/* Wallpaper list */}
             <fieldset style={{ margin: "0 12px 10px 12px" }}>
-              <span className="block text-[16px]">Wallpaper</span>
+              <span className="block text-[16px]">Select a wallpaper:</span>
               <div className="listbox-95" style={{ maxHeight: "130px", overflow: 'auto' }}>
                 <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
                   {wallpapers.map((wp) => (
@@ -117,9 +117,10 @@ export default function Customize() {
             </fieldset>
 
             {/* Buttons */}
-            <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "10px", marginRight: "12px" }}>
+            <div style={{ display: "flex", justifyContent: "flex-end", padding:'8px'}}>
               <button
-                className="w-button"
+                className="w-button" 
+                style={{padding:'2px 8px'}}
                 onClick={() => setAppliedWallpaper(selectedPreview)}
                 type="button"
               >

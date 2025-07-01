@@ -94,22 +94,6 @@
   right:8%;
 }
 
-
-.wallpaper-star-wars {
-  background-color: #011218;
-  position: relative;
-}
-.wallpaper-star-wars .ascii-overlay{
-  position: absolute;
-  font-family: monospace;
-  white-space: pre;
-  line-height: 1.1;
-  pointer-events: none;
-  z-index: -10;
-  bottom:10%;
-  right:8%;
-}
-
 @media (max-width: 768px) {
   .ascii-overlay {
     font-size: 8px !important;

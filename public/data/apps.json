@@ -82,9 +82,9 @@
     "showMenuBar": false,
     "maximize": false,
     "minwidth": 350,
-    "minheight": 440,
-    "maxwidth": "360",
-    "maxheight": 450
+    "minheight": 450,
+    "maxwidth": "350",
+    "maxheight": "450"
   },
   {
     "title": "Minesweeper",
