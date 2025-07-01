@@ -181,6 +181,10 @@ export default function WindowManager({ mounts, apps }: Props) {
 
     const win = new window.WinBox(options);
     win.removeControl("wb-full");
+    if (window.innerWidth <= 768) {
+      win.maximize();
+    }
+
     winboxRefs.current[title] = win;
   };
 

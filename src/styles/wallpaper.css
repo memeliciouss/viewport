@@ -110,3 +110,11 @@
   right:8%;
 }
 
+@media (max-width: 768px) {
+  .ascii-overlay {
+    font-size: 8px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    line-height: 1.05 !important;
+    word-break: break-word;
+  }
+}

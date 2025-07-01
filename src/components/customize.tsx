@@ -10,7 +10,6 @@ const wallpapers = [
   { name: "The Doors", className: "wallpaper-doors" },
   { name: "Artist", className: "wallpaper-artist" },
   { name: "Drums", className: "wallpaper-drums" },
-  { name: "Star Wars", className: "wallpaper-star-wars" },
   { name: "Skeleton", className: "wallpaper-skeleton" },
 ];
 
