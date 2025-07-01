@@ -27,7 +27,6 @@ export default function RootLayout({
       <head>
         <link rel="stylesheet" href="/customui/winbox.min.css" />
         <link rel="stylesheet" href="/customui/windows-theme.css" />
-        <link rel="stylesheet" href="/customui/w95.css" />
         <script src="/customui/winbox.min.js" defer></script>
       </head>
       <body 

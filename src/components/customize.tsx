@@ -7,24 +7,58 @@ const wallpapers = [
   { name: "Sky", className: "wallpaper-sky" },
   { name: "Night", className: "wallpaper-night" },
   { name: "viewport", className: "wallpaper-viewport" },
-  { name: "the doors", className: "wallpaper-doors" },
+  { name: "The Doors", className: "wallpaper-doors" },
   { name: "Artist", className: "wallpaper-artist" },
   { name: "Drums", className: "wallpaper-drums" },
+  { name: "Star Wars", className: "wallpaper-star-wars" },
+  { name: "Skeleton", className: "wallpaper-skeleton" },
 ];
 
 export default function Customize() {
   const [selectedPreview, setSelectedPreview] = useState(() => {
     const active = wallpapers.find(wp => document.body.classList.contains(wp.className));
     return active?.className || "wallpaper-default";
-  }); const [appliedWallpaper, setAppliedWallpaper] = useState(() => {
+  });
+
+  const [appliedWallpaper, setAppliedWallpaper] = useState(() => {
     const active = wallpapers.find(wp => document.body.classList.contains(wp.className));
     return active?.className || "wallpaper-default";
   });
 
+  const [asciiArt, setAsciiArt] = useState("");
+
+  // Apply wallpaper class
   useEffect(() => {
     wallpapers.forEach(wp => document.body.classList.remove(wp.className));
     document.body.classList.add(appliedWallpaper);
   }, [appliedWallpaper]);
+
+  // Load ASCII from .txt
+  useEffect(() => {
+    const name = appliedWallpaper.replace("wallpaper-", "");
+    fetch(`/data/ascii/${name}.txt`)
+      .then(res => res.ok ? res.text() : "")
+      .then(text => setAsciiArt(text))
+      .catch(() => setAsciiArt(""));
+  }, [appliedWallpaper]);
+
+  // Inject ASCII into <body>
+  useEffect(() => {
+    const existing = document.getElementById("ascii-bg");
+    if (existing) existing.remove();
+
+    if (!asciiArt) return;
+
+    const div = document.createElement("div");
+    div.id = "ascii-bg";
+    div.className="ascii-overlay";
+    div.textContent = asciiArt;
+    document.body.appendChild(div);
+
+    return () => {
+      div.remove();
+    };
+  }, [asciiArt, appliedWallpaper]);
 
   return (
     <div style={{ padding: "10px", width: "340px" }}>
@@ -57,7 +91,6 @@ export default function Customize() {
           </div>
         </div>
 
-
         {/* Wallpaper list */}
         <fieldset style={{ margin: "0 12px 10px 12px" }}>
           <span className="block text-[16px]">Wallpaper</span>
@@ -84,13 +117,13 @@ export default function Customize() {
 
         {/* Buttons */}
         <div style={{ display: "flex", justifyContent: "flex-end", gap: "8px", marginTop: "10px", marginRight: "12px" }}>
-
-          <button className="btn mr-2 mb-2 btn-primary"
+          <button
+            className="btn mr-2 mb-2 btn-primary"
             onClick={() => setAppliedWallpaper(selectedPreview)}
-            type="button">
+            type="button"
+          >
             <span className="block text-[11px]">Apply</span>
           </button>
-
         </div>
       </div>
     </div>

@@ -17,153 +17,96 @@
   background: #2a2828;
   position: relative;
 }
-
-.wallpaper-viewport::after {
-  content: "      .__                                     __   \A\
-___  _|__| ______  _  ________   ____________/  |_ \A\
-\\  \\/ /  |/ __ \\\\ \\/ \\/ /\\____ \\ /  _ \\_  __ \\   __\\\A\
- \\   /|  \\  ___/\\     / |  |_> >  <_> )  | \\/|  |  \A\
-  \\_/ |__|\\___  >\\/\\_/  |   __/ \\____/|__|   |__|  \A\
-              \\/        |__|                        ";
-
+.wallpaper-viewport .ascii-overlay{
   position: absolute;
-  bottom: 10%;
-  right: 6%;
   font-family: monospace;
-  font-size: 12px;
   white-space: pre;
   line-height: 1.1;
-  color: #C0C0C0;
   pointer-events: none;
   z-index: -10;
+  bottom:10%;
+  right:8%;
 }
 
 .wallpaper-doors {
   background-color: #547772;
   position: relative;
 }
-
-body.wallpaper-doors::after {
-  content: "     __\A\
-   THE |  |\A\
-    __ |  |   ___      ___    __       _  _\A\
-  ,'  ||  |  .   `.  ,'  ,'. |  |,'`.,' || `.\A\
- :    ||  |:`.`.   ::  ,',' :|  .^..'`._|'--'\A\
- :    ||  |:  `.`. ;:,','   ;|  |    .--.|``.\A\
-  `.__||__| `.__`.`   '___,' |__|    `._||_,' SSt\A\
-\A\
-                     _____\A\
-                   ,'    .`-._\A\
-                  / .-'  <>  .\\\A\
-                 / .  , '___..'-._\A\
-               .'/  `.`. _,'\A\
-               |.  `-.`./\A\
-              /`.` ` _. `.\A\
-             : .|  .' `  _`.\A\
-             ;  ;. .  .'`  _\\\A\
-            /. /\\:.  .  ,'`  \\\A\
-       _-.,'_,'  \\:. . .  ,-'':\A\
-       ``--'     ,'``-._.   ` |,-.\A\
-                 \\ . `  ` --''|, .\\ ,\A\
-                  \\.`._` .  ` | . :/|_\A\
-               _.-.>. \\:.  ,- :\\/\\.`./\A\
-              '`---'.,.'`.    .\\  `-'\A\
-                    '     `.`   `._\A\
-                            `-._`. ``.\A\
-                                `-. ` `.\A\
-                                   `.  .\\\A\
-                                     \\   :\A\
-                                      )` ;\A\
-               ____                  / ./\A\
-             ``-.._ ```----....___.-'.,'\A\
-                   ```----...._____.-'  SSt";
-
+.wallpaper-doors .ascii-overlay{
   position: absolute;
-  bottom: 10%;
-  right: 10%;
   font-family: monospace;
-  font-weight: 900;
-  font-size: 13px;
+  font-weight: 700;
+  color:#000000;
   white-space: pre;
   line-height: 1.1;
-  color: #000000;
   pointer-events: none;
   z-index: -10;
+  bottom:10%;
+  right:8%;
 }
 
 .wallpaper-artist {
-  background: #445271 ;
+  background: #445271;
   position: relative;
 }
 
-.wallpaper-artist::after {
-  content: "                  H|| \A\
-        __________H||___________\A\
-       [|.......................|\A\
-       ||.........## --.#.......|                       \A\
-       ||.........   #  # ......|            @@@@	\A\
-       ||.........     *  ......|          @@@@@@@      \A\
-       ||........     -^........|   ,      - @@@@       \A\
-       ||.....##\\        .......|   |     '_ @@@        \A\
-       ||....#####     /###.....|   |     __\\@ \\@       \A\
-       ||....########\\ \\((#.....|  _\\\\  (/ ) @\\_/)____  \A\
-       ||..####,   ))/ ##.......|   |(__/ /     /|% #/ 	\A\
-       ||..#####      '####.....|    \\___/ ----/_|-*/   \A\
-       ||..#####\\____/#####.....|       ,:   '(         \A\
-       ||...######..######......|       |:     \\        \A\
-       ||.....\"\"\"\"  \"\"\"\" ...    |       |:      )      \A\
-       [|_______________________|       |:      |       \A\
-              H||_______H||             |_____,_|       \A\
-              H||________\\|              |   / (        \A\
-              H||       H||              |  /\\  )       \A\
-              H||       H||              (  \\| /        \A\
-             _H||_______H||__            |  /'=.        \A\
-           H|________________|           '=>/  \\       \A\
-                                        /  \\ /|/	\A\
-                                      ,___/|             ";
-  font-family: monospace;
-  white-space: pre;
-  font-size: 16px;
-  line-height: 1.1;
-  color: #C0C0C0;
+.wallpaper-artist .ascii-overlay{
   position: absolute;
-  bottom: 64px;
-  right: 48px;
+  font-family: monospace;
+  font-size: 16px;
+  white-space: pre;
+  line-height: 1.1;
   pointer-events: none;
   z-index: -10;
+  bottom:10%;
+  right:8%;
 }
 
 .wallpaper-drums {
-  background-color: #714452 ;
+  background-color: #714452;
   position: relative;
 }
-
-.wallpaper-drums::after {
-  content: "                                ,---.      .--.\A\
-                               (  .  )    (  . )\A\
-                                \`/--___  __\`--\`.\A\
-                            ,. _'| |___||___| _|\`.\A\
-                           (-./_,|-,,'     \`.' |\\ \`\A\
-                          __\`-\`-'|//     \`:. \\,|'\A\
-          --     -   --- |\\    | |||       \` | |\A\
-             --          | \\  _|_|\\\\   meme  / |\A\
-      -            _     \\  \\  ,-'-.\`._____,',-'-.\A\
-   ______________      \`[]\\ .\\____________________\A\
-  |\`.____________\`.     || \\| .::'        ._\A\
-  | |_''_o_o__o =.|     ||  \\|_________________\A\
-  | | ,--.   ,--. :   _ ||\A\
-  | |( () ) ( () )|:  \\`::')   ---        __\A\
-  \`.|_\`-_'___\`-_'_|\`. / :: \\\A\
-  -           _  -  : \\___:/    _   -    -\A\
-                    \`--..___)";
+.wallpaper-drums .ascii-overlay{
   position: absolute;
-  bottom: 64px;
-  right: 48px;
   font-family: monospace;
-  font-size: 16px;
+  font-size:16px;
   white-space: pre;
   line-height: 1.1;
-  color: #C0C0C0;
   pointer-events: none;
   z-index: -10;
+  bottom:10%;
+  right:8%;
 }
+
+
+.wallpaper-skeleton {
+  background-color: #471011;
+  position: relative;
+}
+.wallpaper-skeleton .ascii-overlay{
+  position: absolute;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  pointer-events: none;
+  z-index: -10;
+  bottom:10%;
+  right:8%;
+}
+
+
+.wallpaper-star-wars {
+  background-color: #011218;
+  position: relative;
+}
+.wallpaper-star-wars .ascii-overlay{
+  position: absolute;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  pointer-events: none;
+  z-index: -10;
+  bottom:10%;
+  right:8%;
+}
+
