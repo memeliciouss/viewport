@@ -32,22 +32,23 @@ export default function Home() {
           position: 'absolute',
           width: '100vw',
           height: '100vh',
-          padding: '18px 18px 0 18px',
+          padding: '1rem 1rem 0 1rem',
           display: 'flex',
           flexDirection: 'column',
           flexWrap: 'wrap',
           alignContent: 'flex-start',
           gap: '12px',
-          maxHeight: '100vh',
+          maxHeight: '90vh',
         }}
       >
-        {/* 🖱️ Only display selected desktop icons manually */}
         <Deskapp title="ThisPC" onOpen={handleOpen} />
-        <Deskapp title="Internet" onOpen={handleOpen} />
         <Deskapp title="AboutMe" onOpen={handleOpen} />
         <Deskapp title="Resume" onOpen={handleOpen} />
-        <Deskapp title="Paint" onOpen={handleOpen} />
+        <Deskapp title="Internet" onOpen={handleOpen} />
         <Deskapp title="Customize" onOpen={handleOpen} />
+        <Deskapp title="Paint" onOpen={handleOpen} />
+        <Deskapp title="Pacman" onOpen={handleOpen} />
+        <Deskapp title="Minesweeper" onOpen={handleOpen} />
       </main>
 
       <WindowManager

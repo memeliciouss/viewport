@@ -13,26 +13,27 @@ export default function StartMenu({ onOpen }: { onOpen: (title: string) => void 
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [apps, setApps] = useState<AppConfig[]>([]);
 
-  const startMenuApps = ['Github', 'Resume','Source Code'];
-  // define apps the sit on start menu
+  const startMenuApps = ['Resume', 'Github', 'LinkedIn', 'Spotify', 'Letterboxd', 'Customize','SourceCode'];
 
   useEffect(() => {
     fetch('/data/apps.json')
       .then(res => res.json())
       .then((data: AppConfig[]) => {
-        const filtered = data.filter(app => startMenuApps.includes(app.title));
-        setApps(filtered);
+        const appMap = new Map(data.map(app => [app.title, app]));
+        const ordered = startMenuApps
+          .map(title => appMap.get(title))
+          .filter((app): app is AppConfig => !!app);
+        setApps(ordered);
       });
   }, []);
 
   const handleClick = (app: AppConfig) => {
-  if (app.external === true && app.url) {
-    window.open(app.url, '_blank');
-  } else {
-    onOpen(app.title); 
-  }
-};
-
+    if (app.external === true && app.url) {
+      window.open(app.url, '_blank');
+    } else {
+      onOpen(app.title);
+    }
+  };
 
   return (
     <div style={{
@@ -51,7 +52,7 @@ export default function StartMenu({ onOpen }: { onOpen: (title: string) => void 
     }}>
       {/* Vertical side label */}
       <div style={{
-        width: '32px',
+        width: '34px',
         backgroundColor: '#7B7D7B',
         padding: '4px 0',
         writingMode: 'vertical-rl',
@@ -84,7 +85,7 @@ export default function StartMenu({ onOpen }: { onOpen: (title: string) => void 
       </div>
 
       {/* Menu Items */}
-      <div style={{ padding: '6px 0', flex: 1 }}>
+      <div style={{ padding: '2px 0', flex: 1 }}>
         {apps.map((app, index) => (
           <div
             key={app.title}

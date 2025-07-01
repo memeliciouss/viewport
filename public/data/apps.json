@@ -19,7 +19,7 @@
     "x": "30%",
     "y": "8%",
     "width": "100%",
-    "height": "70%",
+    "height": "68%",
     "showMenuBar": true,
     "maximize": true,
     "url": "https://oldgoogle.neocities.org/1998/",
@@ -47,12 +47,12 @@
     "icon": "resume.ico",
     "x": "55%",
     "y": "10%",
-    "width": "60%",
+    "width": "50%",
     "height": "70%",
     "url":"https://drive.google.com/file/d/1ih21kC0bTbITx_K9ZprKglOLDYixuLFN/preview",
     "showMenuBar": true,
     "maximize": true,
-    "minwidth": 200,
+    "minwidth": "20%",
     "minheight": 150,
     "maxwidth": 1000,
     "maxheight": 800
@@ -100,15 +100,16 @@
     "maxwidth": 1000,
     "maxheight": 800
   },
-  {
-    "title": "Notepad",
-    "icon": "minesweeper.ico",
-    "x": "40%",
-    "y": "20%",
-    "width": "480px",
-    "height": "400px",
+ {
+    "title": "Pacman",
+    "icon": "pac-man.ico",
+    "x": "30%",
+    "y": "8%",
+    "width": "70%",
+    "height": "68%",
     "showMenuBar": true,
     "maximize": true,
+    "url": "https://masonicgit.github.io/pacman/",
     "minwidth": 200,
     "minheight": 150,
     "maxwidth": 1000,
@@ -119,5 +120,29 @@
     "icon": "github.png",
     "external":true,
     "url":"https://github.com/memeliciouss"
+  },
+  {
+    "title": "LinkedIn",
+    "icon": "linkedin.png",
+    "external":true,
+    "url":"https://linkedin.com/in/rakshitraj03"
+  },
+  {
+    "title": "Spotify",
+    "icon": "drums.ico",
+    "external":true,
+    "url":"https://open.spotify.com/user/312rhqf472w7lysj7vyyuipllqpu?si=c5ba02a2c0064357"
+  },
+  {
+    "title": "Letterboxd",
+    "icon": "player.ico",
+    "external":true,
+    "url":"https://letterboxd.com/memelicious/"
+  },
+  {
+    "title": "SourceCode",
+    "icon": "config.ico",
+    "external":true,
+    "url":"https://github.com/memeliciouss/viewport"
   }
 ]

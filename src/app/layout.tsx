@@ -30,7 +30,7 @@ export default function RootLayout({
         <script src="/customui/winbox.min.js" defer></script>
       </head>
       <body 
-        className={`wallpaper-default ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`wallpaper-classic ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           {children}
       </body>
