@@ -4,11 +4,12 @@ import { useEffect } from "react";
 
 export default function AsciiObserver() {
   useEffect(() => {
+
+    // update wallpapers in componenets/customize.tsx as well
     const wallpapers = [
       "wallpaper-classic",
-      "wallpaper-sky",
-      "wallpaper-night",
       "wallpaper-viewport",
+      "wallpaper-saturn",
       "wallpaper-doors",
       "wallpaper-artist",
       "wallpaper-drums",
@@ -21,8 +22,7 @@ export default function AsciiObserver() {
 
       const name = active.replace("wallpaper-", "");
 
-      const existing = document.getElementById("ascii-bg");
-      if (existing) existing.remove();
+      document.querySelectorAll('.ascii-overlay').forEach(el => el.remove());
 
       fetch(`/data/ascii/${name}.txt`)
         .then(res => res.ok ? res.text() : "")

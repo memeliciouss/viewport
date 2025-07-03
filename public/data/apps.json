@@ -77,14 +77,14 @@
     "icon": "monitor.ico",
     "x": "20%",
     "y": "10%",
-    "width": "350",
-    "height": "450",
+    "width": "40%",
+    "height": "450px",
     "showMenuBar": false,
     "maximize": false,
-    "minwidth": 350,
-    "minheight": 450,
-    "maxwidth": "350",
-    "maxheight": "450"
+    "minwidth": "33%",
+    "minheight": "450px",
+    "maxwidth": "1000px",
+    "maxheight": "450px"
   },
   {
     "title": "Mines",

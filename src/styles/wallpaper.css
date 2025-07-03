@@ -4,7 +4,7 @@
 }
 .wallpaper-classic .ascii-overlay{
   position: absolute;
-  color:#ffffff;
+  color:#dcdcdc;
   font-family: monospace;
   white-space: pre;
   line-height: 1.1;
@@ -14,18 +14,8 @@
   right:8%;
 }
 
-.wallpaper-sky {
-  background: linear-gradient(to bottom, #87ceeb, #ffffff);
-  position: relative;
-}
-
-.wallpaper-night {
-  background: radial-gradient(circle, #2c3e50, #000000);
-  position: relative;
-}
-
 .wallpaper-viewport {
-  background: #464646;
+  background: radial-gradient(circle, #555454, #2F2F2F);
   position: relative;
 }
 .wallpaper-viewport .ascii-overlay{
@@ -91,10 +81,25 @@
 
 
 .wallpaper-skeleton {
-  background-color: #471011;
+  background-color: #4f1919;
   position: relative;
 }
 .wallpaper-skeleton .ascii-overlay{
+  position: absolute;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  pointer-events: none;
+  z-index: -10;
+  bottom:10%;
+  right:8%;
+}
+
+.wallpaper-saturn {
+  background-color: #031731;
+  position: relative;
+}
+.wallpaper-saturn .ascii-overlay{
   position: absolute;
   font-family: monospace;
   white-space: pre;

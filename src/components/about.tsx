@@ -5,7 +5,7 @@ export default function About() {
   const [activeTab, setActiveTab] = useState<'about' | 'tech' | 'connect'>('about');
 
   return (
-    <div className="page-container">
+    <div className="page-container" style={{width:'100%',height:'100%'}}>
       <div className="content-section">
         <div style={{ display: 'flex', width: '100%' }}>
           {/* Main Content Area */}
@@ -32,15 +32,33 @@ export default function About() {
             <div className="tab-content-container">
               {/* About Tab */}
               {activeTab === 'about' && (
-                <div className="tab-panel-content">
-                  <span className="title" style={{ fontSize: '24px', fontWeight: '600' }}>Rakshit Raj</span>
-                  <div className="divider" />
+                <div className="tab-panel-content" style={{ display: 'flex', flexWrap: 'wrap-reverse', alignItems: 'center', justifyContent: 'center', gap: '1rem' }}>
+                  {/* Text Section */}
+                  <div style={{ flex: '1 1 300px', minWidth: '250px' }}>
+                    <span className="title" style={{ fontSize: '24px', fontWeight: '600' }}>Rakshit Raj</span>
+                    <div className="divider" />
+                    <div className="paragraph" style={{ fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                      <p className="text-line">Pre-final year engineering undergrad</p>
+                      <p className="text-line">Curious mind for software, computers, and robotics.</p>
+                      <p className="text-line">I enjoy building things that click, compute, or come to life.</p>
+                      <p className="text-line">Outside tech, I'm drawn to movies, music, sketching, games, space, and the occasional chess match.</p>
+                    </div>
+                  </div>
 
-                  <div className="paragraph" style={{ fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                    <p className="text-line">Pre-final year engineering undergrad</p>
-                    <p className="text-line">Curious mind for software, computers, and robotics.</p>
-                    <p className="text-line">I enjoy building things that click, compute, or come to life.</p>
-                    <p className="text-line">Outside tech, I'm drawn to movies, music, sketching, games, space, and the occasional chess match.</p>
+                  {/* Image Section */}
+                  <div style={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center' }}>
+                    <img
+                      src="/data/dither.png"
+                      alt="Decorative pattern"
+                      draggable={false}
+                      style={{
+                        width: '10rem',
+                        height: 'auto',
+                        objectFit: 'contain',
+                        userSelect: 'none',
+                        pointerEvents: 'none'
+                      }}
+                    />
                   </div>
                 </div>
               )}
@@ -89,33 +107,7 @@ export default function About() {
             </div>
           </div>
 
-          <div style={{
-            width: '200px',
-            minWidth: '200px',
-            marginLeft: '-5px',
-            marginTop:'25px',
-            padding: '8px',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: '#2A2828',
-            border: '2px solid',
-            borderColor: '#2A2828',
-          }}>
-            <img
-              src="/data/dither.png"
-              alt="Decorative pattern"
-              draggable={false}
-              style={{
-                width: '180px',
-                height: 'auto',
-                objectFit: 'contain',
-                userSelect: 'none',
-                pointerEvents: 'none'
-              }}
-            />
-          </div>
+
         </div>
       </div>
     </div>
