@@ -48,7 +48,7 @@ export default function Home() {
         <Deskapp title="Customize" onOpen={handleOpen} />
         <Deskapp title="Paint" onOpen={handleOpen} />
         <Deskapp title="Pacman" onOpen={handleOpen} />
-        <Deskapp title="Minesweeper" onOpen={handleOpen} />
+        <Deskapp title="Mines" onOpen={handleOpen} />
       </main>
 
       <WindowManager

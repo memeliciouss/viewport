@@ -24,44 +24,17 @@ export default function Customize() {
     return active?.className || "wallpaper-default";
   });
 
-  const [asciiArt, setAsciiArt] = useState("");
-
   useEffect(() => {
     wallpapers.forEach(wp => document.body.classList.remove(wp.className));
     document.body.classList.add(appliedWallpaper);
   }, [appliedWallpaper]);
-
-  useEffect(() => {
-    const name = appliedWallpaper.replace("wallpaper-", "");
-    fetch(`/data/ascii/${name}.txt`)
-      .then(res => res.ok ? res.text() : "")
-      .then(text => setAsciiArt(text))
-      .catch(() => setAsciiArt(""));
-  }, [appliedWallpaper]);
-
-  useEffect(() => {
-    const existing = document.getElementById("ascii-bg");
-    if (existing) existing.remove();
-
-    if (!asciiArt) return;
-
-    const div = document.createElement("div");
-    div.id = "ascii-bg";
-    div.className = "ascii-overlay";
-    div.textContent = asciiArt;
-    document.body.appendChild(div);
-
-    return () => {
-      div.remove();
-    };
-  }, [asciiArt, appliedWallpaper]);
 
   return (
     <div className="tab-shell">
       <div className="tab-bar">
         <div className="tab active">Wallpapers</div>
       </div>
-<div className="tab-content-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="tab-content-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ padding: "10px", width: "340px" }}>
           <div className="window-body">
 
@@ -117,10 +90,10 @@ export default function Customize() {
             </fieldset>
 
             {/* Buttons */}
-            <div style={{ display: "flex", justifyContent: "flex-end", padding:'8px'}}>
+            <div style={{ display: "flex", justifyContent: "flex-end", padding: '8px' }}>
               <button
-                className="w-button" 
-                style={{padding:'2px 18px'}}
+                className="w-button"
+                style={{ padding: '2px 18px' }}
                 onClick={() => setAppliedWallpaper(selectedPreview)}
                 type="button"
               >

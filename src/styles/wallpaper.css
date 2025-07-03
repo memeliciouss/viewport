@@ -2,8 +2,9 @@
   background-color: var(--background);
   position: relative;
 }
-.wallpaper-viewport .ascii-overlay{
+.wallpaper-classic .ascii-overlay{
   position: absolute;
+  color:#ffffff;
   font-family: monospace;
   white-space: pre;
   line-height: 1.1;
@@ -24,7 +25,7 @@
 }
 
 .wallpaper-viewport {
-  background: #2a2828;
+  background: #464646;
   position: relative;
 }
 .wallpaper-viewport .ascii-overlay{
