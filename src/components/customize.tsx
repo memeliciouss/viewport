@@ -120,7 +120,7 @@ export default function Customize() {
             <div style={{ display: "flex", justifyContent: "flex-end", padding:'8px'}}>
               <button
                 className="w-button" 
-                style={{padding:'2px 8px'}}
+                style={{padding:'2px 18px'}}
                 onClick={() => setAppliedWallpaper(selectedPreview)}
                 type="button"
               >

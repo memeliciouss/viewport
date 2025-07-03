@@ -77,11 +77,11 @@ export default function Taskbar({ onOpen }: { onOpen: (title: string) => void })
         >
           <Image
             draggable={false}
-            src="/icons/spacepc.ico"
+            src="/icons/window-day.ico"
             alt="Start"
             width={20}
             height={20}
-            style={{ marginRight: '4px' }}
+            style={{ marginRight: '8px', height:'auto'}}
           />
           Start
         </button>

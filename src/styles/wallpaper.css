@@ -2,6 +2,16 @@
   background-color: var(--background);
   position: relative;
 }
+.wallpaper-viewport .ascii-overlay{
+  position: absolute;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 1.1;
+  pointer-events: none;
+  z-index: -10;
+  bottom:10%;
+  right:8%;
+}
 
 .wallpaper-sky {
   background: linear-gradient(to bottom, #87ceeb, #ffffff);

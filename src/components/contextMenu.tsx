@@ -49,7 +49,7 @@ export default function ContextMenu({ onPropertiesClick }: ContextMenuProps) {
         top: position.y,
         left: position.x,
         position: 'absolute',
-        width: '180px',
+        width: '140px',
         backgroundColor: '#B2B2B3',
         borderTop: '2px solid #FFFEFE',
         borderLeft: '2px solid #FFFEFE',
