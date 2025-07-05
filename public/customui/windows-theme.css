@@ -14,7 +14,7 @@
     /* to provide room for start button in taskbar*/
     margin-top: 38px;
     /* to compensate bottom limit and make minimized window appear on taskbar */
-    /* miinimized window is 35px thick */
+    /* minimized window is 35px thick */
     /* margin-right:80px; --> doensn't work*/
     /* margin-right now works after deobfuscating win.min.js and modifying function */
 }
@@ -46,6 +46,7 @@
     background-color: #747578;
 }
 
+/* min, max, close controls */
 
 .wb-control {
     background-color: #14055D;
@@ -74,21 +75,67 @@
 }
 
 .wb-min {
-    background-image: url(/controls/min.png);
+    background-image: url(/customui/controls/min.png);
 }
 
 .wb-max {
-    background-image: url(/controls/max.png)
+    background-image: url(/customui/controls/max.png)
 }
 
 .wb-close {
-    background-image: url(/controls/close.png)
+    background-image: url(/customui/controls/close.png)
 }
 
 .wb-icon {
     height: 120%;
     margin: -1px 0px 0-3px;
 }
+
+/* enable borders only by appearance in winbox classes with no-resize */
+
+.winbox.my-theme.no-resize .wb-n,
+.winbox.my-theme.no-resize .wb-s,
+.winbox.my-theme.no-resize .wb-e,
+.winbox.my-theme.no-resize .wb-w {
+    display: block !important;
+    pointer-events: none;
+}
+
+.wb-body {
+    top: 30px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: #c0c0c0;
+    color: black;
+    font-family: "windows", sans-serif;
+    font-size: 13px;
+    overflow: hidden;
+}
+
+
+.winbox-body {
+    padding: 8px;
+    display: flex;
+    width: 100%;
+    height: 100%
+}
+
+.winbox-menu-bar {
+    width: 100%;
+    background-color: #C5C5C4;
+    font-family: "windows", sans-serif;
+    font-size: 13px;
+    color: black;
+    display: flex;
+    gap: 8px;
+    user-select: none;
+    border-bottom: 1px solid #888;
+    padding: 0px 8px;
+    cursor: var(--cursor-arrow);
+}
+
+/* winbox borders */
 
 .wb-n,
 .wb-w {
@@ -117,39 +164,7 @@
     bottom: -8px;
 }
 
-
-.wb-body {
-    top: 30px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    background-color: #c0c0c0;
-    color: black;
-    font-family: "windows", sans-serif;
-    font-size: 13px;
-    overflow: hidden;
-}
-
-.winbox-menu-bar {
-    width: 100%;
-    background-color: #C5C5C4;
-    font-family: "windows", sans-serif;
-    font-size: 13px;
-    color: black;
-    display: flex;
-    gap: 8px;
-    user-select: none;
-    border-bottom: 1px solid #888;
-    padding: 0px 8px;
-    cursor: var(--cursor-arrow);
-}
-
-.winbox-body {
-    padding: 8px;
-    display: flex;
-    width: 100%;
-    height: 100%
-}
+/* desktop icons or apps */
 
 .desktop-icon {
     display: flex;
@@ -162,14 +177,12 @@
     border-color: transparent;
     border-width: 1px;
 }
-
 .desktop-icon:active {
     cursor: var(--cursor-grab);
     user-select: none;
 
-
+    
 }
-
 .icon-label {
     display: inline;
     font-size: 14px;
@@ -182,7 +195,6 @@
     padding: 2px 4px;
     background: transparent;
 }
-
 .desktop-icon:focus .icon-label {
     background-color: #000080;
     border-color: white;
@@ -217,10 +229,7 @@
 
 }
 
-.divider {
-    border: #404040;
-    border-width: 1px;
-}
+/* themed tabs */
 
 .tab-shell {
     flex: 1;
@@ -262,27 +271,27 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    min-width: 100%;
-    min-width: 100%;
+    height: 100%;
     padding: 8px 14px;
     border: 2px solid;
-    border-color: #ffffff #808080 #808080 #ffffff;
+    border-color: #FFFEFE #808080 #808080 #FFFEFE;
     background: #dfdfdf;
     margin-top: -2px;
     box-sizing: border-box;
 }
 
+/* content divider */
+
 .divider {
-    height: 2px;
-    background: #808080;
-    border-top: 1px solid #FFFEFE;
-    margin: 8px 0;
-    width: 50%;
+    height: 4px;
+    background: #FFFEFE;
+    border-top: 2px solid #808080;
+    margin: 4px 0;
+    width: 100%;
 }
 
-/* Win95-style scrollbar */
+/* themed scrollbar */
 ::-webkit-scrollbar {
     width: 16px;
     height: 16px;
